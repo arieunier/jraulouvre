@@ -36,3 +36,12 @@ def __execRequest(strReq, Attributes):
         result = MANUAL_ENGINE_POSTGRES.execute(strReq, Attributes)
         return utils.__resultToDict(result)
     return {'data' : [], "columns": []}
+
+def getShifts():
+    sql_request = """
+            select Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed 
+            from public.Shift 
+            where ShiftCurrentConfirmed < ShiftTotalSeats
+            order by Id ASC
+    """
+    return __execRequest(sql_request, None)

@@ -18,14 +18,9 @@ def guest():
         logger.debug(utils.get_debug_all(request))
 
         #time for SQL request
-        sql_request = """
-            select Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed 
-            from public.Shift 
-            where ShiftCurrentConfirmed < ShiftTotalSeats
-            order by Id ASC
-        """
         beginSQL = datetime.now()
-        result = postgres.__execRequest(sql_request, None)
+        for i in range(0,1000):
+            result = postgres.getShifts()
         endSQL = datetime.now()
         logger.info(endSQL - beginSQL)
         logger.info(result)
