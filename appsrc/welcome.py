@@ -54,6 +54,6 @@ def welcome():
         
         traceback.print_exc()
         cookie, cookie_exists =  utils.getCookie()
-        return utils.returnResponse(render_template(variables.ERROR_PAGE), 200, cookie, cookie_exists)
+        return utils.returnResponse(render_template(variables.ERROR_PAGE, error="An error occured, please try again later"), 404, cookie, cookie_exists)
 
         

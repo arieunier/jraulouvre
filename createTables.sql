@@ -1,4 +1,20 @@
-drop table if exists public.Shift;
+drop table if exists public.voluntary;
+drop table  if exists public.Shift;
+
+create table public.voluntary(
+                Id varchar(36) not null primary key, 
+                Firstname varchar(255) not null,
+                Lastname varchar(255) not null,
+                Birthdate date not null,
+                Email varchar(100) not null,
+                Telephone varchar(20) not null,
+                ShiftId varchar(36) references public.shift(Id),
+                RegistrationStatus varchar(30) not null,
+                ConfirmationCode varchar(6) not null,
+                CookieId varchar(36) not null,
+                creation_date timestamp not null default NOW()
+); 
+
 create table public.Shift(
                 Id varchar(5) not null primary key,
                 ShiftDate date not null,
@@ -24,18 +40,7 @@ insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, Shi
         values ('6', '2019-03-25', 'Jeudi 25 Après Midi', 'Thursday 25th Afternoon', '14h00 - 17h00', 55, 0);
 
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('7', '2019-03-26', 'Vendredi 26 Matin', 'Friday 26tx Morning', '09h00 - 12h00', 55, 0);
+        values ('7', '2019-03-26', 'Vendredi 26 Matin', 'Friday 26th Morning', '09h00 - 12h00', 55, 0);
                 
-drop table if exists public.voluntary;
-create table public.voluntary(
-                Id varchar(36) not null primary key, 
-                Firstname varchar(255) not null,
-                Lastname varchar(255) not null,
-                Birthdate date not null,
-                Telephone varchar(20) not null,
-                ShiftId varchar(36) references public.shift(Id),
-                RegistrationStatus varchar(30) not null,
-                ConfirmationCode varchar(6) not null,
-                CookieId varchar(36) not null,
-                creation_date timestamp not null default NOW()) ; 
-);
+
+

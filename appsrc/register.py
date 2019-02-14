@@ -32,13 +32,14 @@ def register():
         if (request.method == 'POST' and variables.ACCEPT_REGISTRATION == 'True'):
             Firstname=request.form['Firstname']
             Lastname=request.form['Lastname']
-            Email=request.form['Email']
+            Telephone=request.form['Telephone']
+            Email=request.form['Email'].strip()
             Birthdate=request.form['Birthdate']
-            EmailConfirmation=request.form['EmailConfirmation']
+            EmailConfirmation=request.form['EmailConfirmation'].strip()
             ShiftId=request.form['Shift']
             
-            #now we call the DB everytime to make sure we have place
             
+            #now we call the DB everytime to make sure we have place
             shiftAvail = postgres.getShifts()
             isShiftAvailable = False
             # is the shift still available ?
@@ -48,18 +49,26 @@ def register():
                     logger.info("Shift Id {} still Available - {}/{}".format(ShiftId, 
                         shift['shiftcurrentconfirmed'], shift['shifttotalseats']))
                     break
-            if (isShiftAvailable == 'False'):
+
+            if (isShiftAvailable == False):
                 # need to display an error and reload
-                data = render_template(variables.REGISTER, form=form, shifts=shiftAvail['data'], error="Yes")
-
-
-            # is user already registered with another shift 
-
-            
-            # ok now we an add the user
-            
-
-            data = render_template(variables.THANKS)
+                logger.info("Shift Id {} Not Available ".format(ShiftId))
+                data = render_template(variables.REGISTER, form=form, shifts=shiftAvail['data'], 
+                    ErrorMessageEn="This shift is now full, please select another one.",
+                    ErrorMessageFr="Cette session est désormais pleine, merci d'en choisir une autre.")
+            else:
+                # is user already registered with another shift 
+                if (postgres.isUserAlreadyRegistered(Email) == True):
+                    data = render_template(variables.REGISTER, form=form, shifts=shiftAvail['data'], 
+                        ErrorMessageEn="You are already registered to a shift. Please cancel your registration first.",
+                        ErrorMessageFr="Vous êtes déjà enregistré à une session. Veuillez d'abord annuler celle ci. ")
+                    
+                else:
+                    # ok now we an add the user
+                    postgres.insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, cookie)
+                    # flush redis
+                    rediscache.__delCache(variables.KEY_REDIS_SHIFTS)
+                    data = render_template(variables.THANKS)
                 
         else:
                     
@@ -76,10 +85,10 @@ def register():
             # check now the len of the available shifts
             logger.info("Remaining Shifts: {}".format(len(shiftAvail['data'])))
             if (len(shiftAvail['data']) == 0):
-                return utils.returnResponse(render_template(variables.NO_MORE_SHIFT), 200, cookie, cookie_exists)
+                return utils.returnResponse(render_template(variables.ERROR_PAGE, error="No more shift available"), 200, cookie, cookie_exists)
             else:
-                logger.info("has shift")
-                logger.info(shiftAvail['data'])
+                #logger.info("has shift")
+                #logger.info(shiftAvail['data'])
                 data = render_template(variables.REGISTER, form=form, shifts=shiftAvail['data'])
 
         dateend = datetime.now()
@@ -90,6 +99,6 @@ def register():
         
         traceback.print_exc()
         cookie, cookie_exists =  utils.getCookie()
-        return utils.returnResponse(render_template(variables.ERROR_PAGE), 200, cookie, cookie_exists)
+        return utils.returnResponse(render_template(variables.ERROR_PAGE, error="An error occured, please try again later"), 404, cookie, cookie_exists)
 
         

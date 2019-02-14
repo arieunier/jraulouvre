@@ -6,6 +6,7 @@ from datetime import datetime
 import os , ujson
 import uuid
 from libs import utils , logs , rediscache
+import random 
 
 DATABASE_URL = os.getenv('DATABASE_URL','')
 USE_DB = os.getenv('US_DB','True')
@@ -48,3 +49,72 @@ def getShifts():
     for entry in data['data']:
         entry['shiftdateiso'] = entry['shiftdate'].strftime("%d-%m-%Y")
     return data
+
+def getVoluntaries():
+    sql_request = """
+        select Id, Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, RegistrationStatus, ConfirmationCode, Creation_Date from voluntary order by Creation_Date DESC
+        """
+    result = __execRequest(sql_request, None)
+    return result
+
+
+def isUserAlreadyRegistered(email):
+    sql_Request = """
+        select Id, RegistrationStatus from public.voluntary where Email=%(Email)s 
+    """
+    result = __execRequest(sql_Request, {'Email' : email} )
+    logger.info(result)
+    if (len(result['data']) > 0):
+        for entry in result['data']:
+            logger.info(entry)
+            if entry['registrationstatus'] == 'CONFIRMED':
+                logger.info("user is already registered, must reject it")
+                return True
+    return False
+
+def incShiftConfirmed(ShiftId):
+    sqlUpdate = "update public.Shift set ShiftCurrentConfirmed = ShiftCurrentConfirmed + 1 where Id = %(ShiftId)s"
+    params = {"ShiftId": ShiftId,}
+    __execRequestWithNoResult(sqlUpdate, params)    
+
+def insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, Cookie):
+    sql_request = """
+        insert into public.voluntary(Id, Firstname, Lastname, Birthdate,
+        Email, Telephone, ShiftId, RegistrationStatus, ConfirmationCode, CookieId, creation_date )
+        values
+        (%(Id)s, %(Firstname)s, %(Lastname)s, %(Birthdate)s, %(Email)s,
+        %(Telephone)s, %(ShiftId)s, %(RegistrationStatus)s, %(ConfirmationCode)s,
+        %(CookieId)s, now())
+    """
+    params = {"Id": uuid.uuid4().__str__(),
+    "Firstname": Firstname,
+    "Lastname" : Lastname,
+    "Birthdate" : Birthdate,
+    "Telephone": Telephone,
+    "Email" : Email,
+    "ShiftId": ShiftId,
+    "RegistrationStatus" : "CONFIRMED",
+    "ConfirmationCode" : random.randint(0, 10000),
+    "CookieId":  Cookie}
+    logger.info(params)
+    __execRequestWithNoResult(sql_request, params)
+
+    incShiftConfirmed(ShiftId)
+
+
+def getUserById(Id):
+    return __execRequest('Select Id, ShiftId, RegistrationStatus, ConfirmationCode from public.voluntary where Id=%(Id)s', {'Id':Id})
+
+def unregisterVoluntary(Id, ConfirmationCode, ShiftId):
+    # checks user exist
+    sql = """
+        update public.voluntary set RegistrationStatus = 'CANCELLED' where
+        Id=%(Id)s and ConfirmationCode=%(ConfirmationCode)s
+        """
+    __execRequestWithNoResult(sql, {'Id':Id, 'ConfirmationCode':ConfirmationCode})
+
+    sql = """
+        update public.shift set ShiftCurrentConfirmed = ShiftCurrentConfirmed - 1 where
+        Id=%(ShiftId)s
+        """
+    __execRequestWithNoResult(sql, {'Id':ShiftId})

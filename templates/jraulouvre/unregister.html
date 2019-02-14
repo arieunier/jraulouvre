@@ -1,0 +1,32 @@
+<html lang="en">
+	<head>
+    <!------ Include the above in your HEAD tag ---------->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    </head>
+
+
+	<body>
+        {% if ErrorMessageEn %}
+            <div>{{ ErrorMessageEn }}</div>
+        {% endif %}
+        {% if ErrorMessageFr %}
+            <div>{{ ErrorMessageFr }}</div>
+        {% endif %}        
+        <form name="Unregister" action="" method="post" role="form">
+            {{ form.csrf }}
+            <div>
+                <div>
+                    <input type="text" id="ConfirmationCode" name="ConfirmationCode" data-name="ConfirmationCode" placeholder="Enter the code received via email" maxlength="6" required="" class="form-field w-input" />
+                    <input type="hidden" id="Id" name="Id" data-name="Id" maxlength="36" required="" value={{ Id }}>
+                </div>
+            </div>
+
+            <input type="submit" value="Unregister" data-wait="Please wait..." class="button full-width w-button" />
+        </form>
+    </div>
+  </body>
+</html>                              

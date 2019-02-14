@@ -1,0 +1,69 @@
+<html>
+  <head>
+          <!------ Include the above in your HEAD tag ---------->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        
+    </head>
+        
+        
+    <body>
+        <a>Shifts</a>            
+        <div>
+            <table id="Shifts" cellspacing="0" width="100%" border="1"> 
+                    <thead>
+                            {% for column in columnsShifts %}
+                            <th> {{ column }} </th>
+                            {% endfor %}
+                    </thead>
+                <tbody>
+                        {% for entry in entriesShifts %}
+                        <tr>
+                            {% for column in columnsShifts %}
+                            <td> {{ entry[column] }} </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                </tbody>
+                <tfoot>
+                        {% for column in columnsShifts %}
+                        <th> {{ column }} </th>
+                        {% endfor %}
+                </tfoot>
+        </div>
+        </table>
+        <a>Voluntaries</a> 
+        <div>
+                <table id="Shifts" cellspacing="0" width="100%" border="1"> 
+                        <thead>
+                                {% for column in columnsVoluntaries %}
+                                <th> {{ column }} </th>
+                                {% endfor %}
+                                <th>Cancel Registration</th>
+                        </thead>
+                    <tbody>
+                            {% for entry in entriesVoluntaries %}
+                            <tr>
+                                {% for column in columnsVoluntaries %}
+                                <td> {{ entry[column] }} </td>
+                                {% endfor %}
+                                <td><a href="../unregister?Id={{ entry['id'] }}"> Unregister </a> </td>
+                            </tr>
+                            {% endfor %}
+                    </tbody>
+                    <tfoot>
+                            {% for column in columnsVoluntaries %}
+                            <th> {{ column }} </th>
+                            {% endfor %}
+                            <th>Cancel Registration</th>
+                    </tfoot>
+            
+  </body>
+</html>
+
+
+

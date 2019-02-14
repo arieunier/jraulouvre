@@ -10,6 +10,12 @@
 
 
 	<body>
+        {% if ErrorMessageEn %}
+            <div>{{ ErrorMessageEn }}</div>
+        {% endif %}
+        {% if ErrorMessageFr %}
+            <div>{{ ErrorMessageFr }}</div>
+        {% endif %}        
         <form name="Register" action="" method="post" role="form">
             {{ form.csrf }}
             <div>
@@ -25,6 +31,7 @@
             <div>
                 <div>
                     <select id="Shift" name="Shift" data-name="Shift" required="True">
+                            <option value=''></option>
                             {% for entry in shifts %}
                             <option value={{ entry['id'] }}>{{ entry['shiftdateiso'] }}  {{ entry['shifttime'] }} </option>
                         {% endfor %}
