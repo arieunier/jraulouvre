@@ -44,7 +44,7 @@ def unregister():
             postgres.unregisterVoluntary(Id, ConfirmationCode, userContent['data'][0]['shiftid'])
             rediscache.__delCache(variables.KEY_REDIS_SHIFTS)
 
-            data =""
+            data ="Hasta la vista ..."
         else:
             # gets the id
             if ('Id' not in request.args):
