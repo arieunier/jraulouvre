@@ -47,7 +47,7 @@ def __setCache(key, data, ttl):
 
         key_str = ujson.dumps(key)
         if (REDIS_CONN != None):
-            logger.debug('Storing in Redis')
+            #logger.debug('Storing in Redis')
             REDIS_CONN.set(key_str, data)
             REDIS_CONN.expire(key_str, ttl)
     except Exception as e:
@@ -62,7 +62,7 @@ def __getCache(key):
 
         key_str = ujson.dumps(key)
         if (REDIS_CONN != None):
-            logger.debug('Reading in Redis')
+            #logger.debug('Reading in Redis')
             return REDIS_CONN.get(key_str)
         return None 
     except Exception as e:
@@ -78,7 +78,7 @@ def __delCache(key):
 
         key_str = ujson.dumps(key)
         if (REDIS_CONN != None):
-            logger.debug('Deleting in Redis')
+            #logger.debug('Deleting in Redis')
             REDIS_CONN.delete(key_str)
     except Exception as e:
         REDIS_CONN = None

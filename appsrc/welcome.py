@@ -16,15 +16,26 @@ def guest():
         cookie, cookie_exists =  utils.getCookie()
 
         logger.debug(utils.get_debug_all(request))
-
+        Maxrange = 2
         #time for SQL request
         beginSQL = datetime.now()
-        for i in range(0,1000):
+        for i in range(0,Maxrange):
             result = postgres.getShifts()
         endSQL = datetime.now()
-        logger.info(endSQL - beginSQL)
-        logger.info(result)
+        logger.info("PG Time : {}'".format(endSQL - beginSQL))
+        #logger.info(result)
      
+        key={'shifts' : 'available'}
+        content = ujson.dumps(result)
+        rediscache.__setCache(key, content, 3600)
+
+        beginRedis = datetime.now()
+        for i in range(0,Maxrange):
+            result = ujson.loads(rediscache.__getCache(key))
+        endRedis = datetime.now()
+        logger.info("Redis Time : {}'".format(endRedis - beginRedis))
+        #logger.info(result)
+
 
 
         #data = render_template(GUESTFILE, form=form, hosts=hosts['data'],userid=cookie,PUSHER_KEY=notification.PUSHER_KEY)
