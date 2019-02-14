@@ -36,5 +36,6 @@ create table public.voluntary(
                 ShiftId varchar(36) references public.shift(Id),
                 RegistrationStatus varchar(30) not null,
                 ConfirmationCode varchar(6) not null,
-                CookieId varchar(36) not null
+                CookieId varchar(36) not null,
+                creation_date timestamp not null default NOW()) ; 
 );

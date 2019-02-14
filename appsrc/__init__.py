@@ -24,3 +24,4 @@ logs.logger_init(loggername='app',
 logger = logs.logger 
 
 
+from appsrc import welcome
