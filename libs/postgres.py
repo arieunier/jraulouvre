@@ -52,7 +52,8 @@ def getShifts():
 
 def getVoluntaries():
     sql_request = """
-        select Id, Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, RegistrationStatus, ConfirmationCode, Creation_Date from voluntary order by Creation_Date DESC
+        select Id, Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, RegistrationStatus, ConfirmationCode, Creation_Date 
+        from public.voluntary order by Creation_Date DESC
         """
     result = __execRequest(sql_request, None)
     return result
@@ -117,4 +118,4 @@ def unregisterVoluntary(Id, ConfirmationCode, ShiftId):
         update public.shift set ShiftCurrentConfirmed = ShiftCurrentConfirmed - 1 where
         Id=%(ShiftId)s
         """
-    __execRequestWithNoResult(sql, {'Id':ShiftId})
+    __execRequestWithNoResult(sql, {'ShiftId':ShiftId})

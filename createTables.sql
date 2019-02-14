@@ -1,6 +1,8 @@
+use public;
 drop table if exists public.voluntary;
-drop table  if exists public.Shift;
-
+commit;
+drop table if exists public.shift;
+commit;
 create table public.voluntary(
                 Id varchar(36) not null primary key, 
                 Firstname varchar(255) not null,
@@ -14,8 +16,8 @@ create table public.voluntary(
                 CookieId varchar(36) not null,
                 creation_date timestamp not null default NOW()
 ); 
-
-create table public.Shift(
+commit;
+create table public.shift(
                 Id varchar(5) not null primary key,
                 ShiftDate date not null,
                 ShiftNameFr varchar(36) not null,
@@ -41,6 +43,6 @@ insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, Shi
 
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
         values ('7', '2019-03-26', 'Vendredi 26 Matin', 'Friday 26th Morning', '09h00 - 12h00', 55, 0);
-                
+commit;                
 
 
