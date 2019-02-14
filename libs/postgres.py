@@ -44,4 +44,7 @@ def getShifts():
             where ShiftCurrentConfirmed < ShiftTotalSeats
             order by Id ASC
     """
-    return __execRequest(sql_request, None)
+    data = __execRequest(sql_request, None)
+    for entry in data['data']:
+        entry['shiftdateiso'] = entry['shiftdate'].strftime("%d-%m-%Y")
+    return data

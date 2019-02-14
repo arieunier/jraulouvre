@@ -4,26 +4,23 @@ from datetime import datetime
 import ujson
 import uuid
 from libs import postgres , utils , logs, rediscache
-from appsrc import app, logger
+from appsrc import app, logger, variables
 import traceback
 
-#GUESTFILE = "guest_v2.html"
-WELCOME = "jraulouvre/welcome.html"
 
 @app.route('/', methods=['GET'])
 def welcome():
     try:
         cookie, cookie_exists =  utils.getCookie()
         datebegin = datetime.now()
-        key = {'page' : 'welcome'}
-        tmp_content = rediscache.__getCache(key)
+        tmp_content = rediscache.__getCache(variables.KEY_REDIS_WELCOME)
         if (tmp_content != '' and tmp_content != None):
             data = tmp_content.decode('UTF-8')
             logger.info('returning redis')
         else:
             logger.info('rendering')
-            data = render_template(WELCOME)
-            rediscache.__setCache(key, data.encode(), 10)
+            data = render_template(variables.WELCOME)
+            rediscache.__setCache(variables.KEY_REDIS_WELCOME, data.encode(), 10)
         
         """
         logger.debug(utils.get_debug_all(request))
@@ -57,6 +54,6 @@ def welcome():
         
         traceback.print_exc()
         cookie, cookie_exists =  utils.getCookie()
-        return utils.returnResponse("An error occured, check logDNA for more information", 200, cookie, cookie_exists)
+        return utils.returnResponse(render_template(variables.ERROR_PAGE), 200, cookie, cookie_exists)
 
         

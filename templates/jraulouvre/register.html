@@ -1,0 +1,38 @@
+<html lang="en">
+	<head>
+    <!------ Include the above in your HEAD tag ---------->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    </head>
+
+
+	<body>
+        <form name="Register" action="" method="post" role="form">
+            {{ form.csrf }}
+            <div>
+                <div>
+                    <input type="text" id="Firstname" name="Firstname" data-name="Firstname" placeholder="Your Firstname" maxlength="256" required="" class="form-field w-input" />
+                    <input type="text" id="Lastname" name="Lastname" data-name="Lastname" placeholder="Your Lastname" maxlength="256" required="" class="form-field w-input" />
+                    <input type="text" id="Birthdate" name="Birthdate" data-name="Birthdate" placeholder="Birthdate" maxlength="256" required="" class="form-field w-input" />
+                    <input type="text" id="Telephone" name="Telephone" data-name="Telephone" placeholder="Telephone" maxlength="256" required="" class="form-field w-input" />
+                    <input type="text" id="Email" name="Email" data-name="Email" placeholder="Email" maxlength="256" required="" class="form-field w-input" />
+                    <input type="text" id="EmailConfirmation" name="EmailConfirmation" data-name="EmailConfirmation" placeholder="EmailConfirmation" maxlength="256" required="" class="form-field w-input" />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <select id="Shift" name="Shift" data-name="Shift" required="True">
+                            {% for entry in shifts %}
+                            <option value={{ entry['id'] }}>{{ entry['shiftdateiso'] }}  {{ entry['shifttime'] }} </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <input type="submit" value="Register" data-wait="Please wait..." class="button full-width w-button" />
+        </form>
+    </div>
+  </body>
+</html>                              
