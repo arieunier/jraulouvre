@@ -11,10 +11,21 @@ import traceback
 WELCOME = "jraulouvre/welcome.html"
 
 @app.route('/', methods=['GET'])
-def guest():
+def welcome():
     try:
         cookie, cookie_exists =  utils.getCookie()
-
+        datebegin = datetime.now()
+        key = {'page' : 'welcome'}
+        tmp_content = rediscache.__getCache(key)
+        if (tmp_content != '' and tmp_content != None):
+            data = tmp_content.decode('UTF-8')
+            logger.info('returning redis')
+        else:
+            logger.info('rendering')
+            data = render_template(WELCOME)
+            rediscache.__setCache(key, data.encode(), 10)
+        
+        """
         logger.debug(utils.get_debug_all(request))
         Maxrange = 2
         #time for SQL request
@@ -35,12 +46,13 @@ def guest():
         endRedis = datetime.now()
         logger.info("Redis Time : {}'".format(endRedis - beginRedis))
         #logger.info(result)
+        """
 
+        dateend = datetime.now()
+        logger.info("time = {}".format(dateend - datebegin))
+        #data = render_template(WELCOME)
 
-
-        #data = render_template(GUESTFILE, form=form, hosts=hosts['data'],userid=cookie,PUSHER_KEY=notification.PUSHER_KEY)
-
-        return utils.returnResponse("hello", 200, cookie, cookie_exists)
+        return utils.returnResponse(data, 200, cookie, cookie_exists)
     except Exception as e:
         
         traceback.print_exc()
