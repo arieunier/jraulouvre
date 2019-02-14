@@ -1,0 +1,51 @@
+{
+  "name": "JR au Louvre",
+  "description" : "Exposition de JR au Louvre pour les 30 ans de la Pyramide",
+  "repository":"https://github.com/arieunier/heroku-demo",
+  "keywords": ["python", "postgres", "redis", "connect"], 
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "addons": [
+    {"plan": "heroku-postgresql:standard-0"},
+    {"plan": "heroku-redis:premium-0"},
+    {"plan": "logdna:atto"},
+    {"plan": "newrelic:drake"}
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env":
+    {
+      "NEW_RELIC_CONFIG_FILE": {
+        "Description" : "new relic path",
+        "value" : "/app/newrelic.ini",
+        "required" : false
+      },
+      "LOG_LEVEL": {
+        "Description" : "Log level for applications",
+        "value" : "DEBUG",
+        "required" : true
+      },
+      "KAFKA_CONSUMERGRP": {
+        "Description" : "Kafka default consumer group",
+        "value" : "my-consumer-group",
+        "required" : true
+      },
+      "KAFKA_TOPIC_READ": {
+        "Description" : "Kafka incoming default topic",
+        "value" : "topicRead",
+        "required" : true
+      },
+      "KAFKA_TOPIC_WRITE": {
+        "Description" : "Kafka outgoing default topic",
+        "value" : "topicWrite",
+        "required" : true
+      }
+  }
+}
