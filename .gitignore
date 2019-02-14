@@ -1,0 +1,7 @@
+.ignore
+.pyc
+.vscode
+.idea
+.log
+.DS_Store
+.env
