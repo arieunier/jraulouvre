@@ -50,5 +50,13 @@
         "value" : "topicWrite",
         "required" : true
       }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "echo Setting up environment",
+        "test": "python tests.py "
+      }
+    }
   }
 }
