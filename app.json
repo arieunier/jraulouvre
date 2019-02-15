@@ -3,6 +3,9 @@
   "description" : "Exposition de JR au Louvre pour les 30 ans de la Pyramide",
   "repository":"https://github.com/arieunier/heroku-demo",
   "keywords": ["python", "postgres", "redis", "connect"], 
+  "scripts": {
+    "postdeploy": "psql -f createTables.sql; cp newrelic.ini.template newrelic.ini; newrelic-admin generate-config $NEW_RELIC_LICENSE_KEY newrelic.ini"
+  },
   "formation": {
     "web": {
       "quantity": 1,
