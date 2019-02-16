@@ -3,10 +3,11 @@ import os, logging, psycopg2
 from datetime import datetime 
 import ujson
 import uuid
-from libs import postgres , utils , logs, rediscache
+from libs import postgres , utils , logs, rediscache, sendmail
 from appsrc import app, logger, variables
 import traceback
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, DateField
+import random
 
 
 
@@ -65,9 +66,13 @@ def register():
                     
                 else:
                     # ok now we an add the user
-                    postgres.insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, cookie)
+                    ConfirmationCode=  random.randint(0, 10000)
+                    Id = uuid.uuid4().__str__()
+                    postgres.insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, cookie, ConfirmationCode, Id)
                     # flush redis
                     rediscache.__delCache(variables.KEY_REDIS_SHIFTS)
+                    # sends an email
+                    sendmail.sendEmail(Email, Firstname, Lastname, Birthdate, ConfirmationCode, Id, ShiftId)
                     data = render_template(variables.THANKS)
                 
         else:

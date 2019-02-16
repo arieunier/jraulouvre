@@ -78,7 +78,7 @@ def incShiftConfirmed(ShiftId):
     params = {"ShiftId": ShiftId,}
     __execRequestWithNoResult(sqlUpdate, params)    
 
-def insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, Cookie):
+def insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, Cookie, ConfirmationCode, Id):
     sql_request = """
         insert into public.voluntary(Id, Firstname, Lastname, Birthdate,
         Email, Telephone, ShiftId, RegistrationStatus, ConfirmationCode, CookieId, creation_date )
@@ -87,7 +87,7 @@ def insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, C
         %(Telephone)s, %(ShiftId)s, %(RegistrationStatus)s, %(ConfirmationCode)s,
         %(CookieId)s, now())
     """
-    params = {"Id": uuid.uuid4().__str__(),
+    params = {"Id": Id,
     "Firstname": Firstname,
     "Lastname" : Lastname,
     "Birthdate" : Birthdate,
@@ -95,7 +95,7 @@ def insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, C
     "Email" : Email,
     "ShiftId": ShiftId,
     "RegistrationStatus" : "CONFIRMED",
-    "ConfirmationCode" : random.randint(0, 10000),
+    "ConfirmationCode" : ConfirmationCode,
     "CookieId":  Cookie}
     logger.info(params)
     __execRequestWithNoResult(sql_request, params)

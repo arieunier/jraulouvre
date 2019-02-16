@@ -16,7 +16,8 @@
     {"plan": "heroku-postgresql:standard-0"},
     {"plan": "heroku-redis:premium-0"},
     {"plan": "logdna:atto"},
-    {"plan": "newrelic:drake"}
+    {"plan": "newrelic:drake"},
+    {"plan": "sendgrid:silver"}
   ],
   "buildpacks": [
     {
