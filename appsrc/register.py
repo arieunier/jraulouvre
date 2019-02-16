@@ -72,7 +72,10 @@ def register():
                     # flush redis
                     rediscache.__delCache(variables.KEY_REDIS_SHIFTS)
                     # sends an email
-                    sendmail.sendEmail(Email, Firstname, Lastname, Birthdate, ConfirmationCode, Id, ShiftId)
+                    # gets the shift name
+                    shift = postgres.getShiftById(ShiftId)
+
+                    sendmail.sendEmail(Email, Firstname, Lastname, Birthdate, ConfirmationCode, Id, shift['data'][0]['shiftnamefr'])
                     data = render_template(variables.THANKS)
                 
         else:

@@ -102,6 +102,8 @@ def insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, C
 
     incShiftConfirmed(ShiftId)
 
+def getShiftById(Id):
+    return __execRequest('Select Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime from public.Shift where Id=%(Id)s', {'Id':Id})
 
 def getUserById(Id):
     return __execRequest('Select Id, ShiftId, RegistrationStatus, ConfirmationCode from public.voluntary where Id=%(Id)s', {'Id':Id})
