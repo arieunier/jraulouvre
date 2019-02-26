@@ -75,7 +75,7 @@ def register():
                     # gets the shift name
                     shift = postgres.getShiftById(ShiftId)
 
-                    sendmail.sendEmail(Email, Firstname, Lastname, Birthdate, ConfirmationCode, Id, shift['data'][0]['shiftnamefr'])
+                    sendmail.sendEmail(Email, Firstname, Lastname, Birthdate, ConfirmationCode, Id, shift['data'][0]['shiftnamefr'], Telephone)
                     data = render_template(variables.THANKS)
                 
         else:

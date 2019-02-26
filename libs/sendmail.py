@@ -19,7 +19,7 @@ def print_html_doc():
     print(j2_env.get_template('email.html').render())
 
 
-def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift):
+def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, Telephone):
     sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
     to_email = Email(emailTo)
 
@@ -32,8 +32,8 @@ def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift):
                         Email=emailTo,
                         Confirmation=Confirmation,
                         Shift=Shift,
-                        Id=Id   
-                         )
+                        Id=Id ,  
+                        Telephone=Telephone )
     mail_html = Content(type_='text/html', value=data)
     #mail_txt = Content(type_='text/plain', value='This is a test email message.')
 
