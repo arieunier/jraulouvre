@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="JR au Louvre" content="JR au Louvre" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jr au louvre</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="/static/styles/main.css" />
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    <div class="container">
+      <div class="frame">
+        <header>
+          <h1><a href="/index.html">JR au Louvre</a></h1>
+          <nav></nav>
+        </header>
+        <h2>Inscription</h2>
+        <div class="content" >
+          <p style="text-align: center;">
+            Les inscriptions sont réparties en demi-journées. <br />
+            Afin de satisfaire tout le monde, vous ne pouvez vous inscrire qu’à
+            une seule session.
+          </p>
+          <form name="Register" action="" method="post" role="form"> 
+              <fieldset>
+                  <legend>Sessions disponibles</legend>
+                      <select id="Shift" name="Shift" data-name="Shift" required="True">
+                        {% for entry in shifts %}
+                        <option value={{ entry['id'] }}>{{ entry['shiftdateiso'] }}  {{ entry['shifttime'] }} </option>
+                        {% endfor %}
+                      </select>                
+              </fieldset>         
+              <fieldset>
+                  <legend>Informations personelles</legend>
+                    <label>Prénom
+                      <input type="text" id="Firstname" name="Firstname" data-name="Firstname" placeholder="Your Firstname" maxlength="256" required="">
+                    </label>
+                    <label>Nom
+                      <input type="text" id="Lastname" name="Lastname" data-name="Lastname" placeholder="Your Lastname" maxlength="256" required="" >
+                    </label>
+                    <label>Date de naissance
+                      <input type="date" id="Birthdate" name="Birthdate" data-name="Birthdate" placeholder="Birthdate" maxlength="256" required="" >
+                    </label>
+                    <label>Numéro de téléphone
+                      <input type="tel" id="Telephone" name="Telephone" data-name="Telephone" placeholder="Telephone" maxlength="256" required="" >
+                    </label>
+                    <label>Email
+                      <input type="email" id="Email" name="Email" data-name="Email" placeholder="Email" maxlength="256" required="">
+                    </label>
+                    <label>Confirmation d'Email
+                        <input type="email" id="EmailConfirmation" name="EmailConfirmation" data-name="EmailConfirmation" placeholder="EmailConfirmation" maxlength="256" required="">
+                    </label>
+              </fieldset>
+              
+              
+              <input type="submit" value="Register" data-wait="Please wait...">
+          </form>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <small>© JR - tout droit reservé - 2019</small>
+      </footer>
+    </div>
+    <!-- build:js scripts/vendor.js -->
+
+    <script
+      type="text/javascript"
+      src="/static/scripts/jquery.min.js"
+    ></script>
+
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="/static/scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

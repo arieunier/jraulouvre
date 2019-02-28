@@ -9,6 +9,7 @@ import traceback
 
 
 @app.route('/', methods=['GET'])
+@app.route('/index.html', methods=['GET'])
 def welcome():
     try:
         cookie, cookie_exists =  utils.getCookie()

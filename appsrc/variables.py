@@ -1,8 +1,8 @@
 import os 
-WELCOME = "jraulouvre/welcome.html"
+WELCOME = "jraulouvre/index.html" # used to be welcome.html
 KEY_REDIS_WELCOME = {'page' : 'welcome'}
 
-REGISTER = "jraulouvre/register.html"
+REGISTER = "jraulouvre/subscribe.html" #used to be register.html 
 KEY_REDIS_SHIFTS = {'shifts' : 'currentStatus'}
 
 
