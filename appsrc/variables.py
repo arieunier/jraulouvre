@@ -2,7 +2,7 @@ import os
 WELCOME = "jraulouvre/index.html" # used to be welcome.html
 KEY_REDIS_WELCOME = {'page' : 'welcome'}
 
-REGISTER = "jraulouvre/subscribe.html" #used to be register.html 
+REGISTER = "jraulouvre/register.html" #used to be register.html 
 KEY_REDIS_SHIFTS = {'shifts' : 'currentStatus'}
 
 

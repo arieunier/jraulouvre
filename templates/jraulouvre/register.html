@@ -1,45 +1,194 @@
-<html lang="en">
-	<head>
-    <!------ Include the above in your HEAD tag ---------->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    </head>
-
-
-	<body>
-        {% if ErrorMessageEn %}
-            <div>{{ ErrorMessageEn }}</div>
-        {% endif %}
-        {% if ErrorMessageFr %}
-            <div>{{ ErrorMessageFr }}</div>
-        {% endif %}        
-        <form name="Register" action="" method="post" role="form">
-            {{ form.csrf }}
-            <div>
-                <div>
-                    <input type="text" id="Firstname" name="Firstname" data-name="Firstname" placeholder="Your Firstname" maxlength="256" required="" class="form-field w-input" />
-                    <input type="text" id="Lastname" name="Lastname" data-name="Lastname" placeholder="Your Lastname" maxlength="256" required="" class="form-field w-input" />
-                    <input type="text" id="Birthdate" name="Birthdate" data-name="Birthdate" placeholder="Birthdate" maxlength="256" required="" class="form-field w-input" />
-                    <input type="text" id="Telephone" name="Telephone" data-name="Telephone" placeholder="Telephone" maxlength="256" required="" class="form-field w-input" />
-                    <input type="text" id="Email" name="Email" data-name="Email" placeholder="Email" maxlength="256" required="" class="form-field w-input" />
-                    <input type="text" id="EmailConfirmation" name="EmailConfirmation" data-name="EmailConfirmation" placeholder="EmailConfirmation" maxlength="256" required="" class="form-field w-input" />
-                </div>
-            </div>
-            <div>
-                <div>
-                    <select id="Shift" name="Shift" data-name="Shift" required="True">
-                            <option value=''></option>
-                            {% for entry in shifts %}
-                            <option value={{ entry['id'] }}>{{ entry['shiftdateiso'] }}  {{ entry['shifttime'] }} </option>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="JR au Louvre" content="JR au Louvre" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jr au louvre</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="/static/styles/main.css" />
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    <div class="container">
+      <div class="frame">
+        <header>
+          <h1><a href="/index.html">JR au Louvre</a></h1>
+          <nav></nav>
+        </header>
+        <h2>Inscription</h2>
+        <div class="content" >
+          <p style="text-align: center;">
+            Les inscriptions sont réparties en demi-journées. <br />
+            Afin de satisfaire tout le monde, vous ne pouvez vous inscrire qu’à
+            une seule session.
+          </p>
+          <form name="Register" action="" method="post" role="form"> 
+              <fieldset>
+                  <legend>Sessions disponibles</legend>
+                      <select id="Shift" name="Shift" data-name="Shift" required="True">
+                        {% for entry in shifts %}
+                        <option value={{ entry['id'] }}>{{ entry['shiftdateiso'] }}  {{ entry['shifttime'] }} </option>
                         {% endfor %}
-                    </select>
-                </div>
-            </div>
-            <input type="submit" value="Register" data-wait="Please wait..." class="button full-width w-button" />
-        </form>
+                      </select>                
+              </fieldset>         
+              <fieldset>
+                  <legend>Informations personelles</legend>
+                    <label>Prénom
+                      <input type="text" id="Firstname" name="Firstname" data-name="Firstname" placeholder="Your Firstname" maxlength="256" required="">
+                    </label>
+                    <label>Nom
+                      <input type="text" id="Lastname" name="Lastname" data-name="Lastname" placeholder="Your Lastname" maxlength="256" required="" >
+                    </label>
+                    <label>Date de naissance
+                      <input type="date" id="Birthdate" name="Birthdate" data-name="Birthdate" placeholder="Birthdate" maxlength="256" required="" >
+                    </label>
+                    <label>Numéro de téléphone
+                      <input type="tel" id="Telephone" name="Telephone" data-name="Telephone" placeholder="Telephone" maxlength="256" required="" >
+                    </label>
+                    <label>Email
+                      <input type="email" id="Email" name="Email" data-name="Email" placeholder="Email" maxlength="256" required="">
+                    </label>
+                    <label>Confirmation d'Email
+                        <input type="email" id="EmailConfirmation" name="EmailConfirmation" data-name="EmailConfirmation" placeholder="EmailConfirmation" maxlength="256" required="">
+                    </label>
+              </fieldset>
+            </fieldset>
+            <p>
+              Souhaite participer à l’atelier COLLAGE aux dates suivantes :
+            </p>
+            <p>
+              Je déclare être majeur
+            </p>
+            <p>
+              Je déclare être en capacité physique de participer à l’atelier ci dessus
+              mentionné.Je suis informé qu’il n’y a pas sur le site, ni de vestiaire ni
+              de lieu pour entreposer des effets personnels et dégage l’association de
+              toute responsabilité en cas de perte ou de vol d’un objet m’appartenant .
+            </p>
+            <p>
+              <fieldset>
+                <legend>CESSION DE DROIT A L’IMAGE</legend>
+            </p>
+            <p>
+              Je confirme être informé que l’atelier collage JR AU LOUVRE est susceptible
+              d’être filmé et / ou photographié et cède en conséquence, à titre gratuit
+              et pour la durée légale de protection de toute œuvre éligible au droit
+              d’auteur utilisant mon image, pour toute reproduction partielle ou totale,
+              quelque soit le procédé de reproduction ou de diffusion de l’événement JR
+              AU LOUVRE auquel je participe dans les termes suivants :
+            </p>
+  
+            <p>
+              J’AUTORISE l’Amicale des colleurs d’affiches ou toute personne physique
+              ou morale qu’elle souhaiterait se voir substituée, à enregistrer, fixer
+              et à utiliser et exploiter mon image et ma voix, par reproduction et/ou
+              représentation de celle-ci, dans le cadre de la production, la
+              commercialisation, et la promotion des œuvres d’art de l’artiste JR sur
+              tout support et notamment par le biais :
+            </p>
+            <ul>
+              <li>
+               de la production et de la commercialisation d’œuvres d’art,
+              </li>
+              <li>
+                de l’édition et de la commercialisation de lithographies,
+              </li>
+              <li>
+                de l’édition et de la commercialisation d’ouvrages relatifs au
+                travail artistique de JR,
+              </li>
+              <li>
+                sur les sites Internet relatifs au travail artistique de JR,
+              </li>
+              <li>
+               de la réalisation de toute vidéo ou œuvre audiovisuelle relative au
+                travail artistique de JR (telle que la réalisation de reportage
+                d’information destiné à la télévision),
+              </li>
+              <li>
+                et plus généralement pour toute communication au public par voie de
+                presse, catalogues, carton d’invitation, affiche… relative au travail
+                artistique de JR ,
+              </li>
+            </ul>
+            <p>
+              et ce, à l'exclusion expresse des exploitations suivantes : contexte
+              érotique ou pornographique, publicités.
+            </p>
+            <p>
+              <em>
+                <input type="checkbox" name="" id="" required> j’ ai compris et suis d’accord pour la cession
+              </em>
+            </p>
+            </fieldset>
+            <fieldset>
+              <legend>POLITIQUE DE CONFIDENTIALITE </legend>
+              <p>
+                <input type="checkbox" name="" id="" required> Je suis informé que mes données personnelles sont
+                utilisées par
+                l’Association AMICALE DES COLLEURS D’AFFICHE afin d’organiser l’événement
+                et l’atelier Collage JR AU LOUVRE .
+              </p>
+              <p>
+                <input type="checkbox" name="" id="" required> Je suis informé que mes données pourront être
+                transmises, uniquement
+                à la
+                personne physique ou morale susceptible de reproduire l’événement dans les
+                conditions ci dessus mentionnées.
+              </p>
+              <p>
+                <input type="checkbox" name="" id="" required> Je suis informé que le délai de conservation de mes
+                données sera le
+                même
+                que celui de la cession stipulée au dessus pour les besoins de
+                justification de cette cession.
+              </p>
+              <p>
+                <input type="checkbox" name="" id="" required> que les données sont collectées par les outils fournis
+                par SALES
+                FORCES.org, sous traitant hébergeur des données.
+              </p>
+              <p>
+                <input type="checkbox" name="" id="" required> J’ai la possibilité à tout moment de solliciter que mes
+                données
+                soient
+                retirées des fichiers de l’Association en m’adressant à XXXX@WWWW et en
+                justifiant de mon identité
+              </p>
+            </fieldset>
+              
+              
+              <input type="submit" value="Register" data-wait="Please wait...">
+          </form>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <small>© JR - tout droit reservé - 2019</small>
+      </footer>
     </div>
+    <!-- build:js scripts/vendor.js -->
+
+    <script
+      type="text/javascript"
+      src="/static/scripts/jquery.min.js"
+    ></script>
+
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="/static/scripts/main.js"></script>
+    <!-- endbuild -->
   </body>
-</html>                              
+</html>
