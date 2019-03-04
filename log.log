@@ -1,7 +1,0 @@
-{'2019-03-04 09:52:29.678','INFO',6985,postgres.py:28-<module>:-->2019-03-04 09:52:29.678115 - Initialization done Postgresql }
-{'2019-03-04 09:52:30.033','INFO',6986,postgres.py:28-<module>:-->2019-03-04 09:52:30.033325 - Initialization done Postgresql }
-{'2019-03-04 09:52:53.129','INFO',6986,rediscache.py:22-__connect:-->2019-03-04 09:52:53.129476  - Initialization done Redis}
-{'2019-03-04 09:52:54.619','INFO',6986,welcome.py:22-welcome:-->rendering}
-{'2019-03-04 09:52:58.487','INFO',6986,welcome.py:50-welcome:-->time = 0:00:11.157235}
-{'2019-03-04 09:53:02.188','INFO',6986,welcome.py:20-welcome:-->returning redis}
-{'2019-03-04 09:53:02.189','INFO',6986,welcome.py:50-welcome:-->time = 0:00:07.331121}
