@@ -20,7 +20,7 @@ class ReusableForm(Form):
     EmailConfirmation = TextField('EmailConfirmation', validators=[validators.required()])
     ShiftId = TextField('ShiftId', validators=[validators.required()])
     
-@app.route('/subscribe.html', methods=['GET', 'POST'])
+@app.route('/register.html', methods=['GET', 'POST'])
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     try:
