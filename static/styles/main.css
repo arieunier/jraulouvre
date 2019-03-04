@@ -38,7 +38,7 @@ ul li {
 
 .frame {
   max-width: 1600px;
-  background-image: url(/static/images/sky.png);
+  background-image: url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/sky.png);
   background-position: top
 }
 
@@ -53,7 +53,7 @@ header h1 a {
   display: -ms-flexbox;
   display: flex;
   text-indent: -99999px;
-  background-image: url(/static/images/logo.png);
+  background-image: url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/logo.png);
   background-position: 50%;
   height: 128px;
   background-size: 238px 48px
@@ -79,7 +79,7 @@ footer {
 
   .frame {
     padding: 128px;
-    background-image: url(/static/images/frame_corner_1.png), url(/static/images/frame_corner_2.png), url(/static/images/frame_corner_3.png), url(/static/images/frame_corner_4.png), url(/static/images/frame_top.png), url(/static/images/frame_right.png), url(/static/images/frame_bottom.png), url(/static/images/frame_left.png), url(/static/images/sky.png);
+    background-image: url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_corner_1.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_corner_2.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_corner_3.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_corner_4.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_top.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_right.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_bottom.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_left.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/sky.png);
     background-position: 0 0, 100% 0, 100% 100%, 0 100%, top, 100%, bottom, 0, top;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-y, repeat-x, repeat-y, no-repeat;
     min-height: 60vh
@@ -92,7 +92,7 @@ footer {
   }
 
   .frame {
-    background-image: url(/static/images/frame_corner_1.png), url(/static/images/frame_corner_2.png), url(/static/images/frame_corner_3.png), url(/static/images/frame_corner_4.png), url(/static/images/frame_top.png), url(/static/images/frame_right.png), url(/static/images/frame_bottom.png), url(/static/images/frame_left.png), url(/static/images/pyramid_bottom.png), url(/static/images/louvre_left.png), url(/static/images/louvre_right.png), url(/static/images/background_bottom.png), url(/static/images/sky.png);
+    background-image: url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_corner_1.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_corner_2.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_corner_3.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_corner_4.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_top.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_right.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_bottom.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/frame_left.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/pyramid_bottom.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/louvre_left.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/louvre_right.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/background_bottom.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/sky.png);
     background-position: 0 0, 100% 0, 100% 100%, 0 100%, top, 100%, bottom, 0, bottom, 0 100%, 100% 100%, bottom, top;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-y, repeat-x, repeat-y, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat
   }
@@ -109,7 +109,7 @@ input[type=submit] {
   display: block;
   border-radius: 2px;
   background: #333;
-  background-image: url(/static/images/button_left.png), url(/static/images/button_right.png), url(/static/images/button_center.png);
+  background-image: url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/button_left.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/button_right.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/button_center.png);
   background-position: 0, 100%, 50%;
   background-repeat: no-repeat;
   max-width: 400px;
@@ -134,7 +134,7 @@ input[type=submit]:hover {
 button:active,
 input[type=submit]:active {
   opacity: 1;
-  background-image: url(/static/images/darken.png), url(/static/images/button_left.png), url(/static/images/button_right.png), url(/static/images/button_center.png);
+  background-image: url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/darken.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/button_left.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/button_right.png), url(https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/images/button_center.png);
   background-position: 50%, 0, 100%, 50%;
   background-size: 100%, auto, auto, auto;
   background-repeat: no-repeat
