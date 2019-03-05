@@ -52,7 +52,7 @@ def getShifts():
 
 def getVoluntaries():
     sql_request = """
-        select Id, Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, RegistrationStatus, ConfirmationCode, Creation_Date 
+        select Id, preferred_language, Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, RegistrationStatus, ConfirmationCode, Creation_Date 
         from public.voluntary order by Creation_Date DESC
         """
     result = __execRequest(sql_request, None)

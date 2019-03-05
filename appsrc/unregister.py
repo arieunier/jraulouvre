@@ -62,7 +62,7 @@ def unregister():
             else:
                 doc = variables.UNREGISTER_SUCCESS_EN
 
-            data = render_template(variables.UNREGISTER_SUCCESS)
+            data = render_template(doc)
         else:
             # gets the id
             if ('Id' not in request.args):
