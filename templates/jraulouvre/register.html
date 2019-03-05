@@ -22,7 +22,7 @@
     <div class="container">
       <div class="frame">
         <header>
-          <h1><a href="/index.html">JR au Louvre</a></h1>
+          <h1><a href="/index.html?language={{ language }}">JR au Louvre</a></h1>
           <nav></nav>
         </header>
         <h2>Inscription</h2>
@@ -37,7 +37,7 @@
                   <legend>Sessions disponibles</legend>
                       <select id="Shift" name="Shift" data-name="Shift" required="True">
                         {% for entry in shifts %}
-                        <option value={{ entry['id'] }}>{{ entry['shiftdateiso'] }}  {{ entry['shifttime'] }} </option>
+                        <option value={{ entry['id'] }}>{{ entry['shiftnamefr'] }}</option>
                         {% endfor %}
                       </select>                
               </fieldset>         
@@ -168,7 +168,7 @@
             </fieldset>
               
               
-              <input type="submit" value="Register" data-wait="Please wait...">
+              <input type="submit" value="S'enregistrer" data-wait="Please wait...">
           </form>
               </div>
             </form>

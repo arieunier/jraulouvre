@@ -19,9 +19,27 @@
                 <nav></nav>
             </header>
             <div class="content">
-                <p>Venez participer à la création d’une œuvre d’art monumentale !!</p>
-                <p>À l’occasion des 30 ans de la Pyramide du Louvre, JR crée une œuvre collaborative à l’échelle de la cour Napoléon. Trois ans après avoir fait disparaitre la Pyramide, il s’apprête à la révéler sous un nouveau jour en réalisant un collage gigantesque, grâce à vous !</p>
-                <button onclick="location.href='/register.html?language={{ language }}'" type="button">Inscription</button>
+                {% if ErrorMessageEn %}
+                <div class="error-message">{{ ErrorMessageEn }}</div>
+                {% endif %}
+                {% if ErrorMessageFr %}
+                <div class="error-message">{{ ErrorMessageFr }}</div>
+                {% endif %}
+                <form name="Unregister" action="" method="post" role="form">
+                  {{ form.csrf }}
+                  <fieldset>
+                        <legend>Désinscription</legend>
+                    <label> Entrez le code de confirmation que vous avez reçu par e-mail pour vous désincrire.
+                      <input type="text" id="ConfirmationCode" name="ConfirmationCode" data-name="ConfirmationCode" placeholder="Enter the code received via email"
+                        maxlength="6" required="" class="form-field w-input" />
+                    </label>
+        
+                    <input type="hidden" id="Id" name="Id" data-name="Id" maxlength="36" required="" value={{ Id }}>
+                  </fieldset>
+        
+        
+                  <input type="submit" value="Se désinscrire" data-wait="Please wait..." class="button full-width w-button" />
+                </form>
             </div>
         </div>
         <footer><small>© JR - tout droit reservé - 2019</small></footer>

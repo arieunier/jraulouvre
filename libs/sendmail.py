@@ -19,13 +19,13 @@ def print_html_doc():
     print(j2_env.get_template('email.html').render())
 
 
-def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, Telephone):
+def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, Telephone, Language):
     sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
     to_email = Email(emailTo)
 
     #content = Content("text/plain", "Hello, Email!")
     data =  Environment(loader=FileSystemLoader('templates/jraulouvre'),
-                        trim_blocks=True).get_template('email.html').render(
+                        trim_blocks=True).get_template('email_' + Language + '.html').render(
                         Firstname=Firstname,
                         Lastname=Lastname,
                         Birthdate = Birthdate,
@@ -33,9 +33,10 @@ def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, 
                         Confirmation=Confirmation,
                         Shift=Shift,
                         Id=Id ,  
-                        Telephone=Telephone )
+                        Telephone=Telephone,
+                        language=Language )
     mail_html = Content(type_='text/html', value=data)
-    #mail_txt = Content(type_='text/plain', value='This is a test email message.')
+
 
     mail = Mail(FROM_EMAIL, SUBJECT, to_email, mail_html)
     #mail.add_content(mail_txt)

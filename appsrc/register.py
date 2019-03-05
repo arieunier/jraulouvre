@@ -28,7 +28,15 @@ def register():
         logger.debug(utils.get_debug_all(request))
         datebegin = datetime.now()
         
-        
+        Preferred_Language='fr'
+        template = variables.REGISTER
+        thanks = variables.THANKS
+        if ('language' in request.args):
+            if (request.args['language'] != None and request.args['language'] != ''):
+                if request.args['language'] == 'en':
+                    Preferred_Language = 'en'
+
+
         form = ReusableForm(request.form)
         if (request.method == 'POST' and variables.ACCEPT_REGISTRATION == 'True'):
             Firstname=request.form['Firstname']
@@ -38,7 +46,6 @@ def register():
             Birthdate=request.form['Birthdate']
             EmailConfirmation=request.form['EmailConfirmation'].strip()
             ShiftId=request.form['Shift']
-            
             
             #now we call the DB everytime to make sure we have place
             shiftAvail = postgres.getShifts()
@@ -54,13 +61,13 @@ def register():
             if (isShiftAvailable == False):
                 # need to display an error and reload
                 logger.info("Shift Id {} Not Available ".format(ShiftId))
-                data = render_template(variables.REGISTER, form=form, shifts=shiftAvail['data'], 
+                data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'], 
                     ErrorMessageEn="This shift is now full, please select another one.",
                     ErrorMessageFr="Cette session est désormais pleine, merci d'en choisir une autre.")
             else:
                 # is user already registered with another shift 
                 if (postgres.isUserAlreadyRegistered(Email) == True):
-                    data = render_template(variables.REGISTER, form=form, shifts=shiftAvail['data'], 
+                    data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'], 
                         ErrorMessageEn="You are already registered to a shift. Please cancel your registration first by clicking the link send by email.",
                         ErrorMessageFr="Vous êtes déjà enregistré à une session. Veuillez d'abord annuler celle ci en cliquant sur le lien reçu par email.")
                     
@@ -68,18 +75,21 @@ def register():
                     # ok now we an add the user
                     ConfirmationCode=  random.randint(0, 10000)
                     Id = uuid.uuid4().__str__()
-                    postgres.insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, cookie, ConfirmationCode, Id)
+                    postgres.insertVoluntary(Firstname, Lastname, Birthdate, Email, Telephone, ShiftId, cookie, ConfirmationCode, Id, Preferred_Language)
                     # flush redis
                     rediscache.__delCache(variables.KEY_REDIS_SHIFTS)
                     # sends an email
                     # gets the shift name
                     shift = postgres.getShiftById(ShiftId)
 
-                    sendmail.sendEmail(Email, Firstname, Lastname, Birthdate, ConfirmationCode, Id, shift['data'][0]['shiftnamefr'], Telephone)
-                    data = render_template(variables.THANKS)
+                    if (Preferred_Language == 'en'):
+                        sendmail.sendEmail(Email, Firstname, Lastname, Birthdate, ConfirmationCode, Id, shift['data'][0]['shiftnameen'], Telephone, 'en')
+                    else:
+                        sendmail.sendEmail(Email, Firstname, Lastname, Birthdate, ConfirmationCode, Id, shift['data'][0]['shiftnamefr'], Telephone, 'fr')
+                    data = render_template(thanks, language=Preferred_Language)
                 
         else:
-                    
+    
             # checks if we have in Redis the current shifts availability
             shiftsAvailBinary = rediscache.__getCache(variables.KEY_REDIS_SHIFTS)
             shiftAvail = {}
@@ -99,7 +109,7 @@ def register():
             else:
                 #logger.info("has shift")
                 #logger.info(shiftAvail['data'])
-                data = render_template(variables.REGISTER, form=form, shifts=shiftAvail['data'])
+                data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'])
 
         dateend = datetime.now()
         logger.info("time = {}".format(dateend - datebegin))

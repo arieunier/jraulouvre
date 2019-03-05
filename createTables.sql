@@ -1,4 +1,5 @@
-use public;
+ 
+ use public;
 drop table if exists public.voluntary;
 commit;
 drop table if exists public.shift;
@@ -14,7 +15,8 @@ create table public.voluntary(
                 RegistrationStatus varchar(30) not null,
                 ConfirmationCode varchar(6) not null,
                 CookieId varchar(36) not null,
-                creation_date timestamp not null default NOW()
+                creation_date timestamp not null default NOW(),
+                preferred_language varchar(2) not null default 'fr'
 ); 
 commit;
 create table public.shift(
@@ -27,22 +29,22 @@ create table public.shift(
                 ShiftCurrentConfirmed integer
 );
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('1', '2019-03-23', 'Mardi 23 Matin', 'Tuesday 23rd Morning', '09h00 - 12h00', 55, 0);
+        values ('1', '2019-03-23', 'Mardi 23 Mars - 09h-12h30', 'Tuesday March 23rd - 09h-12h30', '09h00 - 12h30', 55, 0);
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('2', '2019-03-23', 'Mardi 23 Après Midi', 'Tuesday 23rd Afternoon', '14h00 - 17h00', 55, 0);
+        values ('2', '2019-03-23', 'Mardi 23 Mars - 14h30-18h', 'Tuesday March 23rd - 14h30-18h', '14h30 - 18h00', 55, 0);
 
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('3', '2019-03-24', 'Mercredi 24 Matin', 'Wednesday 23th Morning', '09h00 - 12h00', 55, 0);
+        values ('3', '2019-03-24', 'Mercredi 24 Mars - 09h-12h30', 'Wednesday March 24th - 09h-12h30', '09h00 - 12h30', 55, 0);
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('4', '2019-03-24', 'Mercredi 24 Après Midi', 'Wednesday 24th Afternoon', '14h00 - 17h00', 55, 0);
+        values ('4', '2019-03-24', 'Mercredi 24 Mars - 14h30-18h', 'Wednesday March 24th - 14h30-18', '14h30 - 18h00', 55, 0);
 
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('5', '2019-03-25', 'Jeudi 25 Matin', 'Thursday 25th Morning', '09h00 - 12h00', 55, 0);
+        values ('5', '2019-03-25', 'Jeudi 25 Mars - 09h-12h30', 'Thursday March 25th - 09h-12h30', '09h00 - 12h30', 55, 0);
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('6', '2019-03-25', 'Jeudi 25 Après Midi', 'Thursday 25th Afternoon', '14h00 - 17h00', 55, 0);
+        values ('6', '2019-03-25', 'Jeudi 25 Mars - 14h30-18h', 'Thursday March 25th - 14h30-18', '14h30 - 18h00', 55, 0);
 
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('7', '2019-03-26', 'Vendredi 26 Matin', 'Friday 26th Morning', '09h00 - 12h00', 55, 0);
+        values ('7', '2019-03-26', 'Vendredi 26 Mars - 09h-12h30', 'Friday March 26th - 09h-12h30', '09h00 - 12h30', 55, 0);
 commit;                
 
 

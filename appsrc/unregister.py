@@ -21,7 +21,12 @@ def unregister():
         logger.debug(utils.get_debug_all(request))
         datebegin = datetime.now()
         
-        
+        language='fr'
+        if ('language' in request.args):
+            if (request.args['language'] != None and request.args['language'] != ''):
+                if request.args['language'] == 'en':
+                    language = 'en'
+
         form = ReusableForm(request.form)
         if request.method == 'POST':
             ConfirmationCode=request.form['ConfirmationCode']
@@ -37,7 +42,13 @@ def unregister():
                     ConfirmationCode, 
                     userContent['data'][0]['registrationstatus'], 
                     userContent['data'][0]['confirmationcode'] ))
-                return utils.returnResponse(render_template(variables.UNREGISTER, 
+                
+                if (language =='fr'):
+                    doc = variables.UNREGISTER
+                else:
+                    doc = variables.UNREGISTER_EN
+
+                return utils.returnResponse(render_template(doc , 
                 form=form, Id=Id,
                 ErrorMessageEn="Incorrect configuration. Can not proceed with unregister action. Please check code given by email.",
                 ErrorMessageFr="Configuration incorrrecte, veuillez vérifier le code reçu par email."), 200, cookie, cookie_exists)
@@ -46,6 +57,10 @@ def unregister():
             # status is correct, lets check if 
             postgres.unregisterVoluntary(Id, ConfirmationCode, userContent['data'][0]['shiftid'])
             rediscache.__delCache(variables.KEY_REDIS_SHIFTS)
+            if (language =='fr'):
+                doc = variables.UNREGISTER_SUCCESS
+            else:
+                doc = variables.UNREGISTER_SUCCESS_EN
 
             data = render_template(variables.UNREGISTER_SUCCESS)
         else:
@@ -64,8 +79,12 @@ def unregister():
                 return utils.returnResponse(render_template(variables.ERROR_PAGE, error="Incorrect configuration, please check given Id"), 200, cookie, cookie_exists)
 
             # render the page
-            
-            data = render_template(variables.UNREGISTER, form=form, Id=Id)
+            if (language =='fr'):
+                doc = variables.UNREGISTER
+            else:
+                doc = variables.UNREGISTER_EN
+
+            data = render_template(doc, form=form, Id=Id)
 
         
         dateend = datetime.now()

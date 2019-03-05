@@ -14,37 +14,26 @@ def welcome():
     try:
         cookie, cookie_exists =  utils.getCookie()
         datebegin = datetime.now()
-        tmp_content = rediscache.__getCache(variables.KEY_REDIS_WELCOME)
+        
+        language='fr'
+        redisKey = variables.KEY_REDIS_WELCOME 
+        template = variables.WELCOME
+        if ('language' in request.args):
+            if (request.args['language'] != None and request.args['language'] != ''):
+                if request.args['language'] == 'en':
+                    language = 'en'
+                    redisKey = variables.KEY_REDIS_WELCOME_EN
+                    template = variables.WELCOME_EN
+
+        tmp_content = rediscache.__getCache(redisKey)
         if (tmp_content != '' and tmp_content != None):
             data = tmp_content.decode('UTF-8')
             logger.info('returning redis')
         else:
             logger.info('rendering')
-            data = render_template(variables.WELCOME)
-            rediscache.__setCache(variables.KEY_REDIS_WELCOME, data.encode(), 10)
+            data = render_template(template, language=language)
+            rediscache.__setCache(redisKey, data.encode(), 10)
         
-        """
-        logger.debug(utils.get_debug_all(request))
-        Maxrange = 2
-        #time for SQL request
-        beginSQL = datetime.now()
-        for i in range(0,Maxrange):
-            result = postgres.getShifts()
-        endSQL = datetime.now()
-        logger.info("PG Time : {}'".format(endSQL - beginSQL))
-        #logger.info(result)
-     
-        key={'shifts' : 'available'}
-        content = ujson.dumps(result)
-        rediscache.__setCache(key, content, 3600)
-
-        beginRedis = datetime.now()
-        for i in range(0,Maxrange):
-            result = ujson.loads(rediscache.__getCache(key))
-        endRedis = datetime.now()
-        logger.info("Redis Time : {}'".format(endRedis - beginRedis))
-        #logger.info(result)
-        """
 
         dateend = datetime.now()
         logger.info("time = {}".format(dateend - datebegin))
