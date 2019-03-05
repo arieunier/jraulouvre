@@ -61,7 +61,7 @@ def getVoluntaries():
 
 def isUserAlreadyRegistered(email):
     sql_Request = """
-        select Id, RegistrationStatus from public.voluntary where Email=%(Email)s 
+        select Id, RegistrationStatus from public.voluntary where LOWER(Email)=LOWER(%(Email)s) 
     """
     result = __execRequest(sql_Request, {'Email' : email} )
     logger.info(result)

@@ -37,14 +37,17 @@ def unregister():
                     ConfirmationCode, 
                     userContent['data'][0]['registrationstatus'], 
                     userContent['data'][0]['confirmationcode'] ))
-                return utils.returnResponse(render_template(variables.ERROR_PAGE, error="Incorrect configuration. Can not proceed with unregister action"), 200, cookie, cookie_exists)
+                return utils.returnResponse(render_template(variables.UNREGISTER, 
+                form=form, Id=Id,
+                ErrorMessageEn="Incorrect configuration. Can not proceed with unregister action. Please check code given by email.",
+                ErrorMessageFr="Configuration incorrrecte, veuillez vérifier le code reçu par email."), 200, cookie, cookie_exists)
         
             
             # status is correct, lets check if 
             postgres.unregisterVoluntary(Id, ConfirmationCode, userContent['data'][0]['shiftid'])
             rediscache.__delCache(variables.KEY_REDIS_SHIFTS)
 
-            data ="Hasta la vista ..."
+            data = render_template(variables.UNREGISTER_SUCCESS)
         else:
             # gets the id
             if ('Id' not in request.args):
@@ -72,6 +75,8 @@ def unregister():
     except Exception as e:
         traceback.print_exc()
         cookie, cookie_exists =  utils.getCookie()
-        return utils.returnResponse(render_template(variables.ERROR_PAGE, error="An error occured, please try again later"), 200, cookie, cookie_exists)
+        return utils.returnResponse(render_template(variables.ERROR_PAGE, 
+        ErrorMessageEn="An error occured, please try again later.",
+        ErrorMessageFr="Une erreur est survenue, merci de renouveller votre requête plus tard."), 200, cookie, cookie_exists)
 
         

@@ -61,8 +61,8 @@ def register():
                 # is user already registered with another shift 
                 if (postgres.isUserAlreadyRegistered(Email) == True):
                     data = render_template(variables.REGISTER, form=form, shifts=shiftAvail['data'], 
-                        ErrorMessageEn="You are already registered to a shift. Please cancel your registration first.",
-                        ErrorMessageFr="Vous êtes déjà enregistré à une session. Veuillez d'abord annuler celle ci. ")
+                        ErrorMessageEn="You are already registered to a shift. Please cancel your registration first by clicking the link send by email.",
+                        ErrorMessageFr="Vous êtes déjà enregistré à une session. Veuillez d'abord annuler celle ci en cliquant sur le lien reçu par email.")
                     
                 else:
                     # ok now we an add the user
@@ -93,7 +93,9 @@ def register():
             # check now the len of the available shifts
             logger.info("Remaining Shifts: {}".format(len(shiftAvail['data'])))
             if (len(shiftAvail['data']) == 0):
-                return utils.returnResponse(render_template(variables.ERROR_PAGE, error="No more shift available"), 200, cookie, cookie_exists)
+                return utils.returnResponse(render_template(variables.ERROR_PAGE, 
+                ErrorMessageEn="Registrations are closed: there is no more shift available. ",
+                ErrorMessageFr="Les inscriptions sont suspendues: il n'y a plus de place disponible."), 200, cookie, cookie_exists)
             else:
                 #logger.info("has shift")
                 #logger.info(shiftAvail['data'])
@@ -107,6 +109,8 @@ def register():
         
         traceback.print_exc()
         cookie, cookie_exists =  utils.getCookie()
-        return utils.returnResponse(render_template(variables.ERROR_PAGE, error="An error occured, please try again later"), 404, cookie, cookie_exists)
+        return utils.returnResponse(render_template(variables.ERROR_PAGE, 
+        ErrorMessageEn="An error occured, please try again later.",
+        ErrorMessageFr="Une erreur est survenue, merci de renouveller votre requête plus tard."), 404, cookie, cookie_exists)
 
         
