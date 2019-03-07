@@ -22,8 +22,12 @@
     <div class="container">
       <div class="frame">
         <header>
+            <nav>
+                <form action="register.html?language=en" method="post">
+                  <button type="submit" name="english" value="english" class="btn-link">English</button>
+                </form>
+              </nav>
           <h1><a href="/index.html?language={{ language }}">JR au Louvre</a></h1>
-          <nav></nav>
         </header>
         <h2>Inscription</h2>
         <div class="content" >
@@ -44,19 +48,19 @@
                 <legend>Informations personelles</legend>
               </label>
               <label>Adresse e-mail
-                <input type="email" id="Email" name="Email" data-name="Email" placeholder="Email" maxlength="256"
+                <input type="email" id="Email" name="Email" data-name="Email" placeholder="example@domain.com" maxlength="256"
                   required>
               </label>
               <label>Confirmation d'adresse e-mail
                 <input type="email" id="EmailConfirmation" name="EmailConfirmation" data-name="EmailConfirmation"
-                  placeholder="EmailConfirmation" maxlength="256" required>
+                  placeholder="example@domain.com" maxlength="256" required>
               </label>
                 <label>Prénom
-                  <input type="text" id="Firstname" name="Firstname" data-name="Firstname" placeholder="Your Firstname"
+                  <input type="text" id="Firstname" name="Firstname" data-name="Firstname" placeholder="Jean"
                     maxlength="256" required>
                 </label>
                 <label>Nom
-                  <input type="text" id="Lastname" name="Lastname" data-name="Lastname" placeholder="Your Lastname"
+                  <input type="text" id="Lastname" name="Lastname" data-name="Lastname" placeholder="Pignon"
                     maxlength="256" required>
                 </label>
                 <label>Date de naissance
@@ -68,10 +72,7 @@
               Souhaite participer à l’atelier COLLAGE aux dates suivantes :
             </p>
             <p>
-              Je déclare être majeur
-            </p>
-            <p>
-              <input type="checkbox" name="" id="" required> Je déclare être majeur et être en capacité physique de participer à l’atelier ci-dessus mentionné. 
+              <input type="checkbox" name="checkbox1" id="checkbox1" required> Je déclare être majeur et être en capacité physique de participer à l’atelier ci-dessus mentionné. 
 Je suis informé(e) qu’il n’y a sur le site ni vestiaire ni lieu pour entreposer des effets personnels et dégage l’association de toute responsabilité en cas de perte ou de vol d’un objet m’appartenant.
             </p>
             <p>
@@ -107,7 +108,7 @@ Je suis informé(e) qu’il n’y a sur le site ni vestiaire ni lieu pour entrep
             </ul>
             <p>
               <em>
-                <input type="checkbox" name="" id="" required> J’ai compris et je suis d’accord pour la cession de droit à l’image.
+                <input type="checkbox" name="checkbox2" id="checkbox2" required> J’ai compris et je suis d’accord pour la cession de droit à l’image.
               </em>
             </p>
             </fieldset>
@@ -129,7 +130,7 @@ Je suis informé(e) qu’il n’y a sur le site ni vestiaire ni lieu pour entrep
                 J’ai la possibilité à tout moment de solliciter que mes données soient retirées des fichiers de l’Association en m’adressant à contact@jraulouvre.net et en justifiant mon identité. 
               </p>
               <p>
-                <input type="checkbox" name="" id="" required> J’ai compris et je suis d’accord avec la politique de confidentialité 
+                <input type="checkbox" name="checkbox3" id="checkbox3" required> J’ai compris et je suis d’accord avec la politique de confidentialité 
               </p>
               <em>L’Amicale des colleurs d’affiches Association Loi 1901 RNA W751201708, 41 rue sedaine 75011 PARIS</em>
             </fieldset>
@@ -144,16 +145,9 @@ Je suis informé(e) qu’il n’y a sur le site ni vestiaire ni lieu pour entrep
         <small>© JR -  tous droits réservés  - 2019</small>
       </footer>
     </div>
-    <!-- build:js scripts/vendor.js -->
-
-    <script
-      type="text/javascript"
-      src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/jquery.min.js"
-    ></script>
-
-    <!-- endbuild -->
-    <!-- build:js scripts/main.js -->
+    <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/messages_fr.js"></script>   
     <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/main.js"></script>
-    <!-- endbuild -->
   </body>
 </html>

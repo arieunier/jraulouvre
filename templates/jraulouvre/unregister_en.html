@@ -2,50 +2,55 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="JR au Louvre" content="JR au Louvre">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>jr au louvre</title>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/styles/main.css">
+  <meta charset="utf-8">
+  <meta name="JR au Louvre" content="JR au Louvre">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>jr au louvre</title>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/styles/main.css">
 </head>
 
 <body>
-    <!--[if IE]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
-    <div class="container">
-        <div class="frame">
-            <header>
-                <h1><a href="/index.html">JR au Louvre</a></h1>
-                <nav></nav>
-            </header>
-            <div class="content">
-                {% if ErrorMessageEn %}
-                <div class="error-message">{{ ErrorMessageEn }}</div>
-                {% endif %}
-                {% if ErrorMessageFr %}
-                <div class="error-message">{{ ErrorMessageFr }}</div>
-                {% endif %}
-                <form name="Unregister" action="" method="post" role="form">
-                  {{ form.csrf }}
-                  <fieldset>
-                        <legend>Unregister</legend>
-                    <label> Please enter the code you received via email to unregister yourself.
-                      <input type="text" id="ConfirmationCode" name="ConfirmationCode" data-name="ConfirmationCode" placeholder="Enter the code received via email"
-                        maxlength="6" required="" class="form-field w-input" />
-                    </label>
-        
-                    <input type="hidden" id="Id" name="Id" data-name="Id" maxlength="36" required="" value={{ Id }}>
-                  </fieldset>
-        
-        
-                  <input type="submit" value="Unregister" data-wait="Please wait..." class="button full-width w-button" />
-                </form>
-            </div>
-        </div>
-        <footer><small>© JR -  tous droits réservés  - 2019</small></footer>
+  <!--[if IE]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+  <div class="container">
+    <div class="frame">
+      <header>
+            <nav>
+                    <form action="register.html?language=en" method="post">
+                      <button type="submit" name="english" value="english" class="btn-link">English</button>
+                    </form>
+            </nav>
+        <h1><a href="/index.html">JR au Louvre</a></h1>
+      </header>
+      <div class="content">
+        {% if ErrorMessageEn %}
+        <div class="error-message">{{ ErrorMessageEn }}</div>
+        {% endif %}
+        {% if ErrorMessageFr %}
+        <div class="error-message">{{ ErrorMessageFr }}</div>
+        {% endif %}
+        <form name="Unregister" action="" method="post" role="form">
+          {{ form.csrf }}
+          <fieldset>
+            <legend>Unregister</legend>
+            <label> Please enter the code you received via email to unregister yourself.
+              <input type="text" id="ConfirmationCode" name="ConfirmationCode" data-name="ConfirmationCode" placeholder="Enter the code received via email"
+                maxlength="6" required="" class="form-field w-input" />
+            </label>
+
+            <input type="hidden" id="Id" name="Id" data-name="Id" maxlength="36" required="" value={{ Id }}>
+          </fieldset>
+
+
+          <input type="submit" value="Unregister" data-wait="Please wait..." class="button full-width w-button" />
+        </form>
+      </div>
     </div>
-    <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/vendor.js"></script>
-    <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/main.js"></script>
+    <footer><small>© JR - tous droits réservés - 2019</small></footer>
+  </div>
+  <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/main.js"></script>
 </body>
 
 </html>
