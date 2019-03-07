@@ -8,6 +8,7 @@ from appsrc import app, logger, variables
 import traceback
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, DateField
 
+
 @app.route('/<filename>', methods=['GET'])
 def static_proxy(filename):
     if (filename == None or filename == ''):

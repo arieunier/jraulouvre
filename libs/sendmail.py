@@ -3,7 +3,7 @@ import os
 from sendgrid.helpers.mail import Email, Content, Mail
 from appsrc import variables
 from jinja2 import Environment, FileSystemLoader
-
+from datetime import datetime
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 SENDGRID_API_KEY=os.environ.get('SENDGRID_API_KEY', '')
@@ -34,7 +34,8 @@ def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, 
                         Shift=Shift,
                         Id=Id ,  
                         Telephone=Telephone,
-                        language=Language )
+                        language=Language, 
+                        Date =  datetime.now().strftime("%d-%m-%Y"))
     mail_html = Content(type_='text/html', value=data)
 
 

@@ -15,15 +15,17 @@ def welcome():
         cookie, cookie_exists =  utils.getCookie()
         datebegin = datetime.now()
         
-        language='fr'
-        redisKey = variables.KEY_REDIS_WELCOME 
-        template = variables.WELCOME
+        language=utils.getBrowserLanguage(request)
+
+
         if ('language' in request.args):
             if (request.args['language'] != None and request.args['language'] != ''):
                 if request.args['language'] == 'en':
                     language = 'en'
-                    redisKey = variables.KEY_REDIS_WELCOME_EN
-                    template = variables.WELCOME_EN
+                elif request.args['language'] == 'fr':
+                    language = 'fr'
+        redisKey = variables.KEY_REDIS_WELCOME[language] 
+        template = variables.WELCOME[language]
 
         tmp_content = rediscache.__getCache(redisKey)
         if (tmp_content != '' and tmp_content != None):
@@ -44,8 +46,5 @@ def welcome():
         
         traceback.print_exc()
         cookie, cookie_exists =  utils.getCookie()
-        return utils.returnResponse(render_template(variables.ERROR_PAGE,
-        ErrorMessageEn="An error occured, please try again later.",
-        ErrorMessageFr="Une erreur est survenue, merci de renouveller votre requête plus tard."), 404, cookie, cookie_exists)
-
-        
+        return utils.returnResponse(render_template(variables.ERROR_PAGE, 
+        error=variables.ERROR_GENERIC[language], language=language), 404, cookie, cookie_exists)

@@ -15,16 +15,14 @@
     <div class="container">
         <div class="frame">
             <header>
-                <h1><a href="/index.html">JR au Louvre</a></h1>
+                <h1><a href="/index.html?language={{ language }}">JR au Louvre</a></h1>
                 <nav></nav>
             </header>
             <div class="content">
-                {% if ErrorMessageEn %}
-                <div class="error-message">{{ ErrorMessageEn }}</div>
+                {% if ErrorMessage %}
+                <div class="error-message">{{ ErrorMessage }}</div>
                 {% endif %}
-                {% if ErrorMessageFr %}
-                <div class="error-message">{{ ErrorMessageFr }}</div>
-                {% endif %}
+                
                 <form name="Unregister" action="" method="post" role="form">
                   {{ form.csrf }}
                   <fieldset>

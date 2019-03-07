@@ -2,8 +2,22 @@ import datetime
 import uuid
 from flask import request
 import os 
+import traceback
 
 APPNAME = os.getenv("APPNAME", "jraulouvre")
+
+def getBrowserLanguage(request):
+    supported_languages = ["en", "fr", "fr-fr"]
+    lang = 'fr' 
+    try:
+        #print(request.accept_languages)
+        lang = request.accept_languages.best_match(supported_languages)
+        #print(lang)
+        if (lang == None):
+            lang = "en"
+    except Exception as e :
+        traceback.print_exc()
+    return lang
 
 def str2bool(v):
       return v.lower() in ("yes", "true", "t", "1")

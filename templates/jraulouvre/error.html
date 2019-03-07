@@ -19,8 +19,10 @@
                 <nav></nav>
             </header>
             <div class="content">
-                    {{ error }}
-                <button onclick="location.href='/index.html'" type="button">homepage</button>
+                    {% if ErrorMessage %}
+                    <div class="error-message">{{ ErrorMessage }}</div>
+                    {% endif %}
+                <button onclick="location.href='/index.html?language={{ language }}'" type="button">homepage</button>
             </div>
         </div>
         <footer><small>© JR -  tous droits réservés  - 2019</small></footer>

@@ -9,13 +9,11 @@ import traceback
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, DateField
 import random
 
-
-
 class ReusableForm(Form):
     Firstname = TextField('Firstname', validators=[validators.required()])
     Lastname = TextField('Lastname', validators=[validators.required()])
     Birthdate = DateField('Birthdate', validators=[validators.required()])
-    Telephone = TextField('Telephone', validators=[validators.required()])
+    #Telephone = TextField('Telephone', validators=[validators.required()])
     Email = TextField('Email', validators=[validators.required()])
     EmailConfirmation = TextField('EmailConfirmation', validators=[validators.required()])
     ShiftId = TextField('ShiftId', validators=[validators.required()])
@@ -28,20 +26,24 @@ def register():
         logger.debug(utils.get_debug_all(request))
         datebegin = datetime.now()
         
-        Preferred_Language='fr'
-        template = variables.REGISTER
+        Preferred_Language=utils.getBrowserLanguage(request)
+
         thanks = variables.THANKS
         if ('language' in request.args):
             if (request.args['language'] != None and request.args['language'] != ''):
                 if request.args['language'] == 'en':
                     Preferred_Language = 'en'
-
+                elif request.args['language'] == 'fr':
+                    Preferred_Language = 'fr'                    
+                    
+        template = variables.REGISTER[Preferred_Language]
 
         form = ReusableForm(request.form)
         if (request.method == 'POST' and variables.ACCEPT_REGISTRATION == 'True'):
             Firstname=request.form['Firstname']
             Lastname=request.form['Lastname']
-            Telephone=request.form['Telephone']
+            #Telephone=request.form['Telephone']
+            Telephone="+33612345678"
             Email=request.form['Email'].strip()
             Birthdate=request.form['Birthdate']
             EmailConfirmation=request.form['EmailConfirmation'].strip()
@@ -57,19 +59,35 @@ def register():
                     logger.info("Shift Id {} still Available - {}/{}".format(ShiftId, 
                         shift['shiftcurrentconfirmed'], shift['shifttotalseats']))
                     break
+            # test is more than 18yo
+            currentDate = datetime.now()
+            birthdateDate = datetime.strptime(Birthdate, "%Y-%m-%d")
+            diffDates = currentDate - birthdateDate
+            if (diffDates.days < 6570): #18 * 365:
+                logger.warning("User is under 18")
+                data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'], 
+                        ErrorMessage=variables.AGE_LIMIT[Preferred_Language])
+                return utils.returnResponse(data, 200, cookie, cookie_exists)                 
+            logger.info(Preferred_Language)
+            # test emails match
+            if (Email != EmailConfirmation):
+                data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'], 
+                        ErrorMessage=variables.EMAILS_MISMATCH[Preferred_Language])
+                return utils.returnResponse(data, 200, cookie, cookie_exists)    
+
+
+        
 
             if (isShiftAvailable == False):
                 # need to display an error and reload
                 logger.info("Shift Id {} Not Available ".format(ShiftId))
                 data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'], 
-                    ErrorMessageEn="This shift is now full, please select another one.",
-                    ErrorMessageFr="Cette session est désormais pleine, merci d'en choisir une autre.")
+                    ErrorMessage=variables.SHIFT_FULL[Preferred_Language])
             else:
                 # is user already registered with another shift 
                 if (postgres.isUserAlreadyRegistered(Email) == True):
                     data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'], 
-                        ErrorMessageEn="You are already registered to a shift. Please cancel your registration first by clicking the link send by email.",
-                        ErrorMessageFr="Vous êtes déjà enregistré à une session. Veuillez d'abord annuler celle ci en cliquant sur le lien reçu par email.")
+                        ErrorMessage=variables.ALREADY_REGISTERED[Preferred_Language])
                     
                 else:
                     # ok now we an add the user
@@ -104,8 +122,7 @@ def register():
             logger.info("Remaining Shifts: {}".format(len(shiftAvail['data'])))
             if (len(shiftAvail['data']) == 0):
                 return utils.returnResponse(render_template(variables.ERROR_PAGE, 
-                ErrorMessageEn="Registrations are closed: there is no more shift available. ",
-                ErrorMessageFr="Les inscriptions sont suspendues: il n'y a plus de place disponible."), 200, cookie, cookie_exists)
+                ErrorMessage=variables.REGISTRATION_CLOSED[Preferred_Language], language=Preferred_Language), 200, cookie, cookie_exists)
             else:
                 #logger.info("has shift")
                 #logger.info(shiftAvail['data'])
@@ -120,7 +137,6 @@ def register():
         traceback.print_exc()
         cookie, cookie_exists =  utils.getCookie()
         return utils.returnResponse(render_template(variables.ERROR_PAGE, 
-        ErrorMessageEn="An error occured, please try again later.",
-        ErrorMessageFr="Une erreur est survenue, merci de renouveller votre requête plus tard."), 404, cookie, cookie_exists)
+        ErrorMessage=variables.ERROR_GENERIC[Preferred_Language], language=Preferred_Language), 404, cookie, cookie_exists)
 
         

@@ -21,12 +21,15 @@ def unregister():
         logger.debug(utils.get_debug_all(request))
         datebegin = datetime.now()
         
-        language='fr'
+        language=utils.getBrowserLanguage(request)
         if ('language' in request.args):
             if (request.args['language'] != None and request.args['language'] != ''):
                 if request.args['language'] == 'en':
                     language = 'en'
-
+                elif request.args['language'] == 'fr':
+                    language = 'fr'
+                    
+        logger.info(language)
         form = ReusableForm(request.form)
         if request.method == 'POST':
             ConfirmationCode=request.form['ConfirmationCode']
@@ -43,31 +46,26 @@ def unregister():
                     userContent['data'][0]['registrationstatus'], 
                     userContent['data'][0]['confirmationcode'] ))
                 
-                if (language =='fr'):
-                    doc = variables.UNREGISTER
-                else:
-                    doc = variables.UNREGISTER_EN
+                doc = variables.UNREGISTER[language]
+
 
                 return utils.returnResponse(render_template(doc , 
-                form=form, Id=Id,
-                ErrorMessageEn="Incorrect configuration. Can not proceed with unregister action. Please check code given by email.",
-                ErrorMessageFr="Configuration incorrrecte, veuillez vérifier le code reçu par email."), 200, cookie, cookie_exists)
+                form=form, Id=Id, 
+                ErrorMessage=variables.CODE_MISMATCH[language], language=language), 200, cookie, cookie_exists)
         
             
             # status is correct, lets check if 
             postgres.unregisterVoluntary(Id, ConfirmationCode, userContent['data'][0]['shiftid'])
             rediscache.__delCache(variables.KEY_REDIS_SHIFTS)
-            if (language =='fr'):
-                doc = variables.UNREGISTER_SUCCESS
-            else:
-                doc = variables.UNREGISTER_SUCCESS_EN
-
+            doc = variables.UNREGISTER_SUCCESS[language]
             data = render_template(doc)
+
         else:
             # gets the id
             if ('Id' not in request.args):
                 logger.error("Missing Id in Request")
-                return utils.returnResponse(render_template(variables.ERROR_PAGE, error="Incorrect configuration, please provide Id"), 200, cookie, cookie_exists)
+                return utils.returnResponse(render_template(variables.ERROR_PAGE, 
+                ErrorMessage=variables.CODE_MISMATCH[language], language=language), 200, cookie, cookie_exists)
             Id = request.args['Id']                
 
             #logger.info("Id={}".format(Id))
@@ -76,14 +74,11 @@ def unregister():
             #logger.info(userContent)
             if (len(userContent['data']) == 0):
                 logger.error("Unknown user {}".format(Id))
-                return utils.returnResponse(render_template(variables.ERROR_PAGE, error="Incorrect configuration, please check given Id"), 200, cookie, cookie_exists)
+                return utils.returnResponse(render_template(variables.ERROR_PAGE, 
+                ErrorMessage=variables.CODE_MISMATCH[language], language=language), 200, cookie, cookie_exists)
 
             # render the page
-            if (language =='fr'):
-                doc = variables.UNREGISTER
-            else:
-                doc = variables.UNREGISTER_EN
-
+            doc = variables.UNREGISTER[language]
             data = render_template(doc, form=form, Id=Id)
 
         
@@ -95,7 +90,6 @@ def unregister():
         traceback.print_exc()
         cookie, cookie_exists =  utils.getCookie()
         return utils.returnResponse(render_template(variables.ERROR_PAGE, 
-        ErrorMessageEn="An error occured, please try again later.",
-        ErrorMessageFr="Une erreur est survenue, merci de renouveller votre requête plus tard."), 200, cookie, cookie_exists)
+        ErrorMessage=variables.ERROR_GENERIC[language], language=language), 200, cookie, cookie_exists)
 
         
