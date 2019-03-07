@@ -64,7 +64,6 @@ def register():
             birthdateDate = datetime.strptime(Birthdate, "%Y-%m-%d")
             diffDates = currentDate - birthdateDate
             if (diffDates.days < 6570): #18 * 365:
-                logger.warning("User is under 18")
                 data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'], 
                         ErrorMessage=variables.AGE_LIMIT[Preferred_Language])
                 return utils.returnResponse(data, 200, cookie, cookie_exists)                 

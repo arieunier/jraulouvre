@@ -11,10 +11,13 @@ def getBrowserLanguage(request):
     lang = 'fr' 
     try:
         #print(request.accept_languages)
-        lang = request.accept_languages.best_match(supported_languages)
-        #print(lang)
-        if (lang == None):
+        tmplang = request.accept_languages.best_match(supported_languages)
+        print(tmplang)
+        if (tmplang == None):
             lang = "en"
+        else:
+            lang = tmplang[:2]
+        print(lang)
     except Exception as e :
         traceback.print_exc()
     return lang
