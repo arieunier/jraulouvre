@@ -61,7 +61,10 @@ def register():
                     break
             # test is more than 18yo
             currentDate = datetime.now()
-            birthdateDate = datetime.strptime(Birthdate, "%Y-%m-%d")
+            Pattern ="%Y-%m-%d"
+            if ("/" in Birthdate):
+                Pattern = "%Y/%m/%d"
+            birthdateDate = datetime.strptime(Birthdate, Pattern)
             diffDates = currentDate - birthdateDate
             if (diffDates.days < 6570): #18 * 365:
                 data = render_template(template, language=Preferred_Language, form=form, shifts=shiftAvail['data'], 

@@ -54,7 +54,7 @@ EMAILS_MISMATCH={
     "fr":'Les emails ne correspondent pas, veuillez ressaisir.', 
     'en':'Emails entered do not match.'}
 AGE_LIMIT={
-    'fr':'Désolé, vous devez avoir au moins 18 ans pour participer à cet évènement.', 
+    'fr':'Vous devez être majeur pour participer à cette atelier.', 
     'en':'Sorry, you must be over 18 years old to participate to the event.'}    
 
 SHIFT_FULL={
