@@ -8,7 +8,8 @@ from datetime import datetime
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 SENDGRID_API_KEY=os.environ.get('SENDGRID_API_KEY', '')
 FROM_EMAIL = Email("contact@jraulouvre.net", "JR Au Louvre")
-SUBJECT = "JR Au Louvre - Confirmation d'inscription"
+SUBJECT = {'fr' :  "JR Au Louvre - Confirmation d'inscription", 
+'en' : "JR Au Louvre : Registration confirmation"}
 
 
 def print_html_doc():
@@ -21,8 +22,8 @@ def print_html_doc():
 
 def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, Telephone, Language):
     sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
-    to_email = Email(emailTo)
-
+    
+    bcc = "contact@jraulouvre.net"
     #content = Content("text/plain", "Hello, Email!")
     data =  Environment(loader=FileSystemLoader('templates/jraulouvre'),
                         trim_blocks=True).get_template('email_' + Language + '.html').render(
@@ -36,12 +37,40 @@ def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, 
                         Telephone=Telephone,
                         language=Language, 
                         Date =  datetime.now().strftime("%d-%m-%Y"))
-    mail_html = Content(type_='text/html', value=data)
+    
 
 
-    mail = Mail(FROM_EMAIL, SUBJECT, to_email, mail_html)
-    #mail.add_content(mail_txt)
-    response = sg.client.mail.send.post(request_body=mail.get())
+    dataPerso = {
+    "personalizations": [
+        {
+        "to": [{
+                "email": emailTo
+            }],
+        "subject": SUBJECT[Language]
+        }
+    ],
+    "from": {
+        "email": "contact@jraulouvre.net"
+    },
+    "bcc":
+    {
+        "email":bcc
+    },
+    "content": [
+        {
+        "type": "text/html",
+        "value": data
+        }
+    ]
+    }
+
+    response = sg.client.mail.send.post(request_body=dataPerso)
+    
+    # previous version without bcc
+    #mail_html = Content(type_='text/html', value=data)
+    #to_email = Email(emailTo)
+    #mail = Mail(FROM_EMAIL, SUBJECT[Language], to_email, mail_html)
+    #response = sg.client.mail.send.post(request_body=mail.get())
 
 
     #print("#####################")
