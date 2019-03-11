@@ -169,6 +169,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
   <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/messages_fr.js"></script>
   <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/main.js"></script>
+  <script type="text/javascript">
+    var datefield=document.createElement("input")
+    datefield.setAttribute("type", "date")
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"><\/script>\n')
+    }
+  </script>
+
+  <script>
+    if (datefield.type != "date") { //if browser doesn't support input type="date", initialize date picker widget:
+      jQuery(function ($) { //on document.ready
+        $('#Birthdate').datepicker();
+      })
+    }
+  </script>
 </body>
 
 </html>

@@ -706,3 +706,5 @@
 * Files:
 }
 {'2019-03-11 16:47:39.790','INFO',53569,register.py:60-register:-->Shift Id 1 still Available - 0/10}
+{'2019-03-11 16:50:26.808','INFO',54410,postgres.py:28-<module>:-->2019-03-11 16:50:26.808293 - Initialization done Postgresql }
+{'2019-03-11 16:50:27.163','INFO',54411,postgres.py:28-<module>:-->2019-03-11 16:50:27.163076 - Initialization done Postgresql }
