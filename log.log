@@ -1,0 +1,367 @@
+{'2019-03-11 11:10:29.343','INFO',37315,postgres.py:28-<module>:-->2019-03-11 11:10:29.343066 - Initialization done Postgresql }
+{'2019-03-11 11:10:29.730','INFO',37316,postgres.py:28-<module>:-->2019-03-11 11:10:29.730392 - Initialization done Postgresql }
+{'2019-03-11 11:11:01.285','INFO',37316,rediscache.py:22-__connect:-->2019-03-11 11:11:01.285555  - Initialization done Redis}
+{'2019-03-11 11:11:01.357','INFO',37316,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 11:11:01.505','INFO',37316,welcome.py:41-welcome:-->time = 0:00:00.558680}
+{'2019-03-11 11:11:05.861','DEBUG',37316,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 11:11:07.656','INFO',37316,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 11:11:07.666','INFO',37316,register.py:134-register:-->time = 0:00:01.804822}
+{'2019-03-11 12:32:39.981','INFO',42839,postgres.py:28-<module>:-->2019-03-11 12:32:39.980995 - Initialization done Postgresql }
+{'2019-03-11 12:32:40.348','INFO',42840,postgres.py:28-<module>:-->2019-03-11 12:32:40.348903 - Initialization done Postgresql }
+{'2019-03-11 12:32:46.723','INFO',42840,rediscache.py:22-__connect:-->2019-03-11 12:32:46.723608  - Initialization done Redis}
+{'2019-03-11 12:32:46.808','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 12:32:46.952','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.556675}
+{'2019-03-11 12:50:06.353','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 12:50:09.129','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 12:50:09.141','INFO',42840,register.py:134-register:-->time = 0:00:02.787818}
+{'2019-03-11 12:50:13.876','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Cache-Control = max-age=0
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 12:50:13.952','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 12:50:13.953','INFO',42840,register.py:134-register:-->time = 0:00:00.076579}
+{'2019-03-11 12:51:35.745','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Cache-Control = max-age=0
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 12:51:36.158','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 12:51:36.164','INFO',42840,register.py:134-register:-->time = 0:00:00.418245}
+{'2019-03-11 13:12:46.549','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Cache-Control = max-age=0
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:12:47.075','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:12:47.083','INFO',42840,register.py:134-register:-->time = 0:00:00.533789}
+{'2019-03-11 13:12:57.011','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:12:57.147','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.204336}
+{'2019-03-11 13:12:59.640','INFO',42840,welcome.py:33-welcome:-->returning redis}
+{'2019-03-11 13:12:59.642','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.067036}
+{'2019-03-11 13:13:37.262','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:13:37.392','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.195908}
+{'2019-03-11 13:13:41.327','INFO',42840,welcome.py:33-welcome:-->returning redis}
+{'2019-03-11 13:13:41.328','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.069074}
+{'2019-03-11 13:14:13.502','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:14:13.636','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.199468}
+{'2019-03-11 13:14:19.900','INFO',42840,welcome.py:33-welcome:-->returning redis}
+{'2019-03-11 13:14:19.901','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.067339}
+{'2019-03-11 13:14:20.568','INFO',42840,welcome.py:33-welcome:-->returning redis}
+{'2019-03-11 13:14:20.568','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.066399}
+{'2019-03-11 13:14:24.450','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=fr
+* method:GET
+* Args:
+	* language = fr
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/register.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:14:24.841','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:14:24.848','INFO',42840,register.py:134-register:-->time = 0:00:00.397692}
+{'2019-03-11 13:14:27.912','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:14:28.051','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.204014}
+{'2019-03-11 13:14:33.628','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:14:33.771','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.211105}
+{'2019-03-11 13:14:36.304','INFO',42840,welcome.py:33-welcome:-->returning redis}
+{'2019-03-11 13:14:36.304','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.065620}
+{'2019-03-11 13:14:48.814','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:14:48.945','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.196108}
+{'2019-03-11 13:14:51.247','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:14:51.377','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.196240}
+{'2019-03-11 13:16:09.251','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=fr
+* method:GET
+* Args:
+	* language = fr
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=fr
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:16:09.646','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:16:09.653','INFO',42840,register.py:134-register:-->time = 0:00:00.400313}
+{'2019-03-11 13:16:54.648','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=fr
+* method:GET
+* Args:
+	* language = fr
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Cache-Control = max-age=0
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=fr
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:16:54.714','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:16:54.715','INFO',42840,register.py:134-register:-->time = 0:00:00.066376}
+{'2019-03-11 13:17:22.716','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=fr
+* method:GET
+* Args:
+	* language = fr
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Cache-Control = max-age=0
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=fr
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:17:23.112','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:17:23.120','INFO',42840,register.py:134-register:-->time = 0:00:00.401870}
+{'2019-03-11 13:17:25.587','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=fr
+* method:GET
+* Args:
+	* language = fr
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Cache-Control = max-age=0
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=fr
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:17:25.655','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:17:25.655','INFO',42840,register.py:134-register:-->time = 0:00:00.068552}
+{'2019-03-11 13:17:31.872','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:17:32.007','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.199621}
+{'2019-03-11 13:17:36.610','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:17:36.744','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.200993}
+{'2019-03-11 13:18:13.151','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:18:13.286','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.200599}
+{'2019-03-11 13:18:32.583','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:18:32.720','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.203776}
+{'2019-03-11 13:21:00.990','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:21:01.121','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.195827}
+{'2019-03-11 13:21:03.163','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:21:03.565','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:21:03.571','INFO',42840,register.py:134-register:-->time = 0:00:00.408027}
+{'2019-03-11 13:39:11.964','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:39:12.106','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.349361}
+{'2019-03-11 13:40:27.522','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:40:27.665','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.280941}
+{'2019-03-11 13:40:31.359','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:40:31.496','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.207798}
+{'2019-03-11 13:40:34.069','INFO',42840,welcome.py:33-welcome:-->returning redis}
+{'2019-03-11 13:40:34.069','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.069817}
+{'2019-03-11 13:40:38.557','INFO',42840,welcome.py:33-welcome:-->returning redis}
+{'2019-03-11 13:40:38.557','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.070229}
+{'2019-03-11 13:40:46.172','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:40:46.310','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.206522}
+{'2019-03-11 13:41:36.126','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:41:36.526','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:41:36.535','INFO',42840,register.py:134-register:-->time = 0:00:00.408103}
+{'2019-03-11 13:42:31.903','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:POST
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Content-Length = 184
+	* Cache-Control = max-age=0
+	* Origin = http://0.0.0.0:5000
+	* Upgrade-Insecure-Requests = 1
+	* Content-Type = application/x-www-form-urlencoded
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/register.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+	* Shift = 1
+	* Email = hmischler@salesforce.com
+	* EmailConfirmation = hmischler@salesforce.com
+	* Firstname = Hervé
+	* Lastname = Mischler
+	* Birthdate = 1975-01-24
+	* checkbox1 = on
+	* checkbox2 = on
+	* checkbox3 = on
+* Files:
+}
+{'2019-03-11 13:42:32.153','INFO',42840,register.py:60-register:-->Shift Id 1 still Available - 0/10}
+{'2019-03-11 13:42:32.153','INFO',42840,register.py:73-register:-->en}
+{'2019-03-11 13:42:32.353','INFO',42840,postgres.py:67-isUserAlreadyRegistered:-->{'data': [], 'columns': ['id', 'registrationstatus']}}
+{'2019-03-11 13:42:32.353','INFO',42840,postgres.py:101-insertVoluntary:-->{'Id': '98e2a7c5-805e-4425-bef6-ad4b413a4f74', 'Firstname': 'Hervé', 'Lastname': 'Mischler', 'Birthdate': '1975-01-24', 'Telephone': '+33612345678', 'Email': 'hmischler@salesforce.com', 'ShiftId': '1', 'RegistrationStatus': 'CONFIRMED', 'ConfirmationCode': 9934, 'CookieId': '30393afb-2ffb-4bc8-9824-5f2939880579', 'Preferred_Language': 'en'}}
+{'2019-03-11 13:42:33.731','INFO',42840,register.py:134-register:-->time = 0:00:01.808024}
+{'2019-03-11 13:42:51.923','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:42:52.374','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:42:52.374','INFO',42840,register.py:134-register:-->time = 0:00:00.449746}
+{'2019-03-11 13:42:57.752','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:42:57.888','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.205551}
+{'2019-03-11 13:43:03.589','INFO',42840,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 13:43:03.725','INFO',42840,welcome.py:41-welcome:-->time = 0:00:00.204232}
+{'2019-03-11 13:43:05.163','DEBUG',42840,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=fr
+* method:GET
+* Args:
+	* language = fr
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=fr
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:43:05.232','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:43:05.239','INFO',42840,register.py:134-register:-->time = 0:00:00.075676}
