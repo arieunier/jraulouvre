@@ -39,9 +39,9 @@ insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, Shi
         values ('4', '2019-03-27', 'Mercredi 27 Mars - 14h30-18h', 'Wednesday March 27 - 14h30-18', '14h30 - 18h00', 45, 0);
 
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('5', '2019-03-27', 'Jeudi 28 Mars - 09h-12h30', 'Thursday March 28 - 09h-12h30', '09h00 - 12h30', 45, 0);
+        values ('5', '2019-03-27', 'Jeudi 28 Mars - 09h-12h30', 'Thursday March 28 - 09h-12h30', '09h00 - 12h30', 14, 0);
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
-        values ('6', '2019-03-27', 'Jeudi 28 Mars - 14h30-18h', 'Thursday March 28 - 14h30-18', '14h30 - 18h00', 45, 0);
+        values ('6', '2019-03-27', 'Jeudi 28 Mars - 14h30-18h', 'Thursday March 28 - 14h30-18', '14h30 - 18h00', 35, 0);
 
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
         values ('7', '2019-03-27', 'Vendredi 29 Mars - 09h-12h30', 'Friday March 29 - 09h-12h30', '09h00 - 12h30', 45, 0);

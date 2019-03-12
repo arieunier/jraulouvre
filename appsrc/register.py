@@ -63,7 +63,7 @@ def register():
             currentDate = datetime.now()
             Pattern ="%Y-%m-%d"
             if ("/" in Birthdate):
-                Pattern = "%Y/%m/%d"
+                Pattern = "%m/%d/%Y"
             birthdateDate = datetime.strptime(Birthdate, Pattern)
             diffDates = currentDate - birthdateDate
             if (diffDates.days < 6570): #18 * 365:

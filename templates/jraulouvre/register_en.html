@@ -1,152 +1,189 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="JR au Louvre" content="JR au Louvre" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>jr au louvre</title>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <!-- Place favicon.ico in the root directory -->
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/styles/main.css" />
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if IE]>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="JR au Louvre" content="JR au Louvre" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>jr au louvre</title>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <!-- Place favicon.ico in the root directory -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/styles/main.css" />
+  <!-- endbuild -->
+</head>
+
+<body>
+  <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
         <a href="http://browsehappy.com/">upgrade your browser</a> to improve
         your experience.
       </p>
     <![endif]-->
-    <div class="container">
-      <div class="frame">
-        <header>
-
-          <h1><a href="/index.html?language={{ language }}">JR au Louvre</a></h1>
-        </header>
-        <h2>Inscription</h2>
-        <div class="content" >
-            {% if ErrorMessage %}
-            <div class="error-message">{{ ErrorMessage }}</div>
-            {% endif %}
-          <p style="text-align: center;">
-            Les inscriptions sont réparties en demi-journées. <br />
-            Afin de satisfaire tout le monde, vous ne pouvez vous inscrire qu’à une seule session.
+  <div class="container">
+    <div class="frame">
+      <nav><a class="btn-link" href="register.html?language=fr">Version Française</a></nav>
+      <header>
+        <h1><a href="/index.html?language={{ language }}">JR au Louvre</a></h1>
+      </header>
+      <h2>Registration</h2>
+      <div class="content">
+        {% if ErrorMessage %}
+        <div class="error-message">{{ ErrorMessage }}</div>
+        {% endif %}
+        <p style="text-align: center;">
+          Registrations are organized in half-days. <br />
+          In order to meet the demand of all participants, you can only register for one session.
+        </p>
+        <form name="Register" action="" method="post" role="form">
+          <fieldset>
+            <legend>Available sessions </legend>
+            <select id="Shift" name="Shift" data-name="Shift" required="True">
+              {% for entry in shifts %}
+              <option value={{ entry['id'] }}>{{ entry['shiftnameen'] }}</option>
+              {% endfor %}
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Personal Details</legend>
+            </label>
+            <label>Email address
+              <input type="email" id="Email" name="Email" data-name="Email" placeholder="" maxlength="256" required>
+            </label>
+            <label>Confirmation of email address
+              <input type="email" id="EmailConfirmation" name="EmailConfirmation" data-name="EmailConfirmation"
+                placeholder="" maxlength="256" required>
+            </label>
+            <label>Name
+              <input type="text" id="Firstname" name="Firstname" data-name="Firstname" placeholder="" maxlength="256"
+                required>
+            </label>
+            <label>First name
+              <input type="text" id="Lastname" name="Lastname" data-name="Lastname" placeholder="" maxlength="256"
+                required>
+            </label>
+            <label>Date of birth
+              <input type="date" id="Birthdate" name="Birthdate" data-name="Birthdate" placeholder="jj/mm/aaaa"
+                maxlength="256" required>
+          </fieldset>
+          </fieldset>
+          <p>
+            <input type="checkbox" name="checkbox1" id="checkbox1" required> I declare to be of legal age and that I am
+            physically able to participate in the above-mentioned workshop. I am informed that there is no cloakroom or
+            place to store personal belongings on the premises, and I relieve the association of any liability in case
+            of loss or theft of an object belonging to me.
           </p>
-          <form name="Register" action="" method="post" role="form"> 
-              <fieldset>
-                  <legend>Sessions disponibles</legend>
-                      <select id="Shift" name="Shift" data-name="Shift" required="True">
-                        {% for entry in shifts %}
-                        <option value={{ entry['id'] }}>{{ entry['shiftnamefr'] }}</option>
-                        {% endfor %}
-                      </select>                
-              </fieldset>         
-              <fieldset>
-                <legend>Informations personelles</legend>
-              </label>
-              <label>Adresse e-mail
-                <input type="email" id="Email" name="Email" data-name="Email" placeholder="example@domain.com" maxlength="256"
-                  required>
-              </label>
-              <label>Confirmation d'adresse e-mail
-                <input type="email" id="EmailConfirmation" name="EmailConfirmation" data-name="EmailConfirmation"
-                  placeholder="example@domain.com" maxlength="256" required>
-              </label>
-                <label>Prénom
-                  <input type="text" id="Firstname" name="Firstname" data-name="Firstname" placeholder="Jean"
-                    maxlength="256" required>
-                </label>
-                <label>Nom
-                  <input type="text" id="Lastname" name="Lastname" data-name="Lastname" placeholder="Pignon"
-                    maxlength="256" required>
-                </label>
-                <label>Date de naissance
-                  <input type="date" id="Birthdate" name="Birthdate" data-name="Birthdate" placeholder="JJ/MM/AAAA"
-                    maxlength="256" required>
-              </fieldset>
-            </fieldset>
-            <p>
-              Souhaite participer à l’atelier COLLAGE aux dates suivantes :
+          <p>
+            <br />
+          </p>
+          <p></p>
+          <fieldset>
+            <legend>PHOTOGRAPH AND VIDEO RELEASE </legend>
             </p>
             <p>
-              <input type="checkbox" name="checkbox1" id="checkbox1" required> Je déclare être majeur et être en capacité physique de participer à l’atelier ci-dessus mentionné. 
-Je suis informé(e) qu’il n’y a sur le site ni vestiaire ni lieu pour entreposer des effets personnels et dégage l’association de toute responsabilité en cas de perte ou de vol d’un objet m’appartenant.
+              I confirm to be informed that JR AT THE LOUVRE collage workshop can be filmed or photographed, I hereby
+              grant permission to the rights of my image, without payment and within the legal term of protection of
+              any work eligible for copyright using my image, and for any full or partial reproduction, whatever may be
+              the method of reproduction or diffusion of the JR AT THE LOUVRE event in which I participate in the
+              following terms:
             </p>
+
             <p>
-              <fieldset>
-                <legend>CESSION DE DROIT À L’IMAGE</legend>
-            </p>
-            <p>
-              Je confirme être informé que l’atelier collage JR au Louvre est susceptible d’être filmé et / ou photographié et cède en conséquence, à titre gratuit et pour la durée légale de protection de toute œuvre éligible au droit d’auteur utilisant mon image, pour toute reproduction partielle ou totale, quel que soit le procédé de reproduction ou de diffusion de l’événement JR au Louvre auquel je participe dans les termes suivants :
-            </p>
-  
-            <p>
-              J’autorise l’Amicale des colleurs d’affiches ou toute personne physique ou morale qu’elle souhaiterait se voir substituée, à enregistrer, fixer, utiliser et exploiter mon image et ma voix, par reproduction et/ou représentation de celle-ci, dans le cadre de la production, la commercialisation, et la promotion des œuvres d’art de l’artiste JR sur tout support et notamment par le biais :
+              I give permission to the association l’Amicale des colleurs d’affiches or to any natural or legal person
+              it wishes to designate in its place, to record, set, use, and exploit my image and my voice, by
+              reproduction and/or representation, as part of the production, marketing, and promotion of the works of
+              art of the artist JR in any medium and in particular through:
             </p>
             <ul>
               <li>
-                de la production et de la commercialisation d’œuvres d’art,
+                the production and marketing of works of art,
               </li>
               <li>
-                de l’édition et de la commercialisation de lithographies,
+                the publishing and marketing of lithographs,
               </li>
               <li>
-                de l’édition et de la commercialisation d’ouvrages relatifs au travail artistique de JR,
+                the publishing and marketing of works relating to JR’s artistic work,
               </li>
               <li>
-                sur les sites Internet relatifs au travail artistique de JR,
+                on Internet websites relating to JR’s artistic work,
               </li>
               <li>
-                de la réalisation de toute vidéo ou œuvre audiovisuelle relative au travail artistique de JR (telle que la réalisation de reportage d’information destiné à la télévision),
+                the production of any video or audiovisual work relating to JR's artistic work (such as the  production
+                of news reports for television),
               </li>
               <li>
-                et plus généralement pour toute communication au public par voie de presse, catalogues, carton d’invitation, affiche… relative au travail artistique de JR, et ce à l'exclusion expresse des exploitations suivantes : contexte érotique ou pornographique, publicités.
+                and more generally through any communication to the public by means of press, catalogs, invitation
+                card, poster ... relating to JR’s artistic work, with the express exclusion of the following holdings:
+                erotic or pornographic context, commercials.
               </li>
             </ul>
             <p>
-              <em>
-                <input type="checkbox" name="checkbox2" id="checkbox2" required> J’ai compris et je suis d’accord pour la cession de droit à l’image.
-              </em>
+              <p>
+                <input type="checkbox" name="checkbox2" id="checkbox2" required> I understood and agree to the release.
+              </p>
             </p>
-            </fieldset>
-            <fieldset>
-              <legend>POLITIQUE DE CONFIDENTIALITE </legend>
-              <p>
-                Je suis informé(e) que mes données personnelles sont utilisées par l’Association L’Amicale des Colleurs d’Affiches afin d’organiser l’événement et l’atelier Collage JR au Louvre
-              </p>
-              <p>
-                Je suis informé(e) que mes données pourront être transmises, uniquement à la personne physique ou morale susceptible de reproduire l’événement dans les conditions ci-dessus mentionnées.
-              </p>
-              <p>
-                Je suis informé(e) que le délai de conservation de mes données sera le même que celui de la cession stipulée au-dessus pour les besoins de justification de cette cession.
-              </p>
-              <p>
-                Je suis informé(e) que les données sont collectées par Unframed et l’Amicale des Colleurs d’Affiches exclusivement pour les objectifs définis aux présentes. L’hébergeur étant destinataire des données. 
-              </p>
-              <p>
-                J’ai la possibilité à tout moment de solliciter que mes données soient retirées des fichiers de l’Association en m’adressant à contact@jraulouvre.net et en justifiant mon identité. 
-              </p>
-              <p>
-                <input type="checkbox" name="checkbox3" id="checkbox3" required> J’ai compris et je suis d’accord avec la politique de confidentialité 
-              </p>
-              <em>L’Amicale des colleurs d’affiches Association Loi 1901 RNA W751201708, 41 rue sedaine 75011 PARIS</em>
-            </fieldset>
-              <input type="submit" value="S'enregistrer" data-wait="Please wait...">
-          </form>
-              </div>
-            </form>
-          </div>
-        </div>
+          </fieldset>
+          <p>
+            <br />
+          </p>
+          <fieldset>
+            <legend>PRIVACY POLICY </legend>
+            <p>
+              I am informed that my personal data are used by the Association l’Amicale des Colleurs d’Affiches in
+              order to organize the event and the JR at the Louvre Collage workshop.
+            </p>
+            <p>
+              I am informed that my data can be transmitted only to the natural or legal person who may reproduce the
+              event under the conditions mentioned above.
+            </p>
+            <p>
+              I am informed that my data are stored for a period equivalent to the assignment stipulated above for the
+              purposes of justification of this release,
+            </p>
+            <p>
+              that the data are collected by Unframed and l’Amicale des Colleurs d’Affiches exclusively for the
+              purposes defined herein. The host is the recipient of the data. 
+            </p>
+            <p>
+              can request at any time that my data be removed from the files of the Association by applying to
+              contact@jraulouvre.net and justifying my identity.
+            </p>
+            <p>
+              <input type="checkbox" name="checkbox3" id="checkbox3" required> I understood and agree to the privacy
+              policy
+            </p>
+            <em><a href=" https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/Statuts_Amicale_des_colleurs_d_affiche.pdf">The
+                Amicale des colleurs d’affiches Association 1901 Act RNA W751201708</a>, 41 rue sedaine 75011 PARIS
+            </em>
+          </fieldset>
+          <input type="submit" value="Register" data-wait="Please wait...">
+        </form>
       </div>
-      <footer>
-        <small>© JR -  tous droits réservés  - 2019</small>
-      </footer>
     </div>
-    <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-    <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/messages_fr.js"></script>   
-    <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/main.js"></script>
-  </body>
+    <footer>
+      <small>© JR - all rights reserved - 2019 | Contact: contact@jraulouvre.net</a></small>
+    </footer>
+  </div>
+  <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <script src="https://cloud-cube-eu.s3.amazonaws.com/g1amm2hsdl19/public/static/scripts/main.js"></script>
+  <script type="text/javascript">
+    var datefield=document.createElement("input")
+    datefield.setAttribute("type", "date")
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"><\/script>\n')
+    }
+  </script>
+
+  <script>
+    if (datefield.type != "date") { //if browser doesn't support input type="date", initialize date picker widget:
+      jQuery(function ($) { //on document.ready
+        $('#Birthdate').datepicker();
+      })
+    }
+  </script>
+</body>
+
 </html>
