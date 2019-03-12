@@ -15,7 +15,7 @@ def static_proxy(filename):
         return root()
     return app.send_static_file(filename)
 
-@app.route('/cestquilpatron', methods=['GET', 'POST'])
+#@app.route('/cestquilpatron', methods=['GET', 'POST'])
 def cestquilpatron():
     try:
         cookie, cookie_exists =  utils.getCookie()
