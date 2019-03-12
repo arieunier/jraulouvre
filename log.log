@@ -365,3 +365,346 @@
 }
 {'2019-03-11 13:43:05.232','INFO',42840,register.py:124-register:-->Remaining Shifts: 8}
 {'2019-03-11 13:43:05.239','INFO',42840,register.py:134-register:-->time = 0:00:00.075676}
+{'2019-03-11 13:59:46.218','INFO',48845,postgres.py:28-<module>:-->2019-03-11 13:59:46.218489 - Initialization done Postgresql }
+{'2019-03-11 13:59:46.581','INFO',48846,postgres.py:28-<module>:-->2019-03-11 13:59:46.581058 - Initialization done Postgresql }
+{'2019-03-11 13:59:53.610','DEBUG',48846,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=fr
+* method:GET
+* Args:
+	* language = fr
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Cache-Control = max-age=0
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/index.html?language=fr
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:59:53.998','INFO',48846,rediscache.py:22-__connect:-->2019-03-11 13:59:53.998755  - Initialization done Redis}
+{'2019-03-11 13:59:55.668','INFO',48846,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:59:55.682','INFO',48846,register.py:134-register:-->time = 0:00:02.071280}
+{'2019-03-11 13:59:57.907','DEBUG',48846,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/register.html?language=fr
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:59:57.985','INFO',48846,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:59:57.994','INFO',48846,register.py:134-register:-->time = 0:00:00.084772}
+{'2019-03-11 13:59:59.392','DEBUG',48846,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=fr
+* method:GET
+* Args:
+	* language = fr
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Referer = http://0.0.0.0:5000/register.html?language=en
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 13:59:59.465','INFO',48846,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 13:59:59.465','INFO',48846,register.py:134-register:-->time = 0:00:00.073535}
+{'2019-03-11 16:32:28.508','INFO',53568,postgres.py:28-<module>:-->2019-03-11 16:32:28.508674 - Initialization done Postgresql }
+{'2019-03-11 16:32:28.880','INFO',53569,postgres.py:28-<module>:-->2019-03-11 16:32:28.880104 - Initialization done Postgresql }
+{'2019-03-11 16:32:47.998','INFO',53569,rediscache.py:22-__connect:-->2019-03-11 16:32:47.998134  - Initialization done Redis}
+{'2019-03-11 16:32:48.257','INFO',53569,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 16:32:48.398','INFO',53569,welcome.py:41-welcome:-->time = 0:00:00.700957}
+{'2019-03-11 16:32:51.888','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept-Encoding = gzip, deflate
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/
+	* Dnt = 1
+	* Accept-Language = en-us
+* Form:
+* Files:
+}
+{'2019-03-11 16:32:54.551','INFO',53569,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 16:32:54.558','INFO',53569,register.py:134-register:-->time = 0:00:02.669477}
+{'2019-03-11 16:36:09.114','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept-Encoding = gzip, deflate
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/
+	* Dnt = 1
+	* Accept-Language = en-us
+* Form:
+* Files:
+}
+{'2019-03-11 16:36:09.528','INFO',53569,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 16:36:09.537','INFO',53569,register.py:134-register:-->time = 0:00:00.422449}
+{'2019-03-11 16:36:10.483','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept-Encoding = gzip, deflate
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/
+	* Dnt = 1
+	* Accept-Language = en-us
+* Form:
+* Files:
+}
+{'2019-03-11 16:36:10.555','INFO',53569,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 16:36:10.556','INFO',53569,register.py:134-register:-->time = 0:00:00.072111}
+{'2019-03-11 16:37:06.523','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept-Encoding = gzip, deflate
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/
+	* Dnt = 1
+	* Accept-Language = en-us
+* Form:
+* Files:
+}
+{'2019-03-11 16:37:06.591','INFO',53569,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 16:37:06.599','INFO',53569,register.py:134-register:-->time = 0:00:00.075876}
+{'2019-03-11 16:42:29.340','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept-Encoding = gzip, deflate
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/
+	* Dnt = 1
+	* Accept-Language = en-us
+* Form:
+* Files:
+}
+{'2019-03-11 16:42:29.926','INFO',53569,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 16:42:29.935','INFO',53569,register.py:134-register:-->time = 0:00:00.593342}
+{'2019-03-11 16:43:25.879','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:POST
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* Accept-Language = en-us
+	* Accept-Encoding = gzip, deflate
+	* Content-Type = application/x-www-form-urlencoded
+	* Origin = http://0.0.0.0:5000
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/register.html?language=en
+	* Upgrade-Insecure-Requests = 1
+	* Dnt = 1
+	* Content-Length = 183
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+* Form:
+	* Shift = 1
+	* Email = herve.mischler@gmail.com
+	* EmailConfirmation = herve.mischler@gmail.com
+	* Firstname = Mischler
+	* Lastname = herve
+	* Birthdate = 03/02/2019
+	* checkbox1 = on
+	* checkbox2 = on
+	* checkbox3 = on
+* Files:
+}
+{'2019-03-11 16:43:26.090','INFO',53569,register.py:60-register:-->Shift Id 1 still Available - 0/10}
+{'2019-03-11 16:43:47.519','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:POST
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* Accept-Language = en-us
+	* Accept-Encoding = gzip, deflate
+	* Content-Type = application/x-www-form-urlencoded
+	* Origin = http://0.0.0.0:5000
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/register.html?language=en
+	* Upgrade-Insecure-Requests = 1
+	* Dnt = 1
+	* Content-Length = 183
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+* Form:
+	* Shift = 1
+	* Email = herve.mischler@gmail.com
+	* EmailConfirmation = herve.mischler@gmail.com
+	* Firstname = Mischler
+	* Lastname = herve
+	* Birthdate = 05/04/2019
+	* checkbox1 = on
+	* checkbox2 = on
+	* checkbox3 = on
+* Files:
+}
+{'2019-03-11 16:43:47.736','INFO',53569,register.py:60-register:-->Shift Id 1 still Available - 0/10}
+{'2019-03-11 16:43:49.784','INFO',53569,welcome.py:35-welcome:-->rendering}
+{'2019-03-11 16:43:49.918','INFO',53569,welcome.py:41-welcome:-->time = 0:00:00.199605}
+{'2019-03-11 16:44:19.178','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:POST
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* Accept-Language = en-us
+	* Accept-Encoding = gzip, deflate
+	* Content-Type = application/x-www-form-urlencoded
+	* Origin = http://0.0.0.0:5000
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/register.html?language=en
+	* Upgrade-Insecure-Requests = 1
+	* Dnt = 1
+	* Content-Length = 183
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+* Form:
+	* Shift = 1
+	* Email = herve.mischler@gmail.com
+	* EmailConfirmation = herve.mischler@gmail.com
+	* Firstname = Mischler
+	* Lastname = herve
+	* Birthdate = 05/04/1975
+	* checkbox1 = on
+	* checkbox2 = on
+	* checkbox3 = on
+* Files:
+}
+{'2019-03-11 16:44:19.383','INFO',53569,register.py:60-register:-->Shift Id 1 still Available - 0/10}
+{'2019-03-11 16:44:45.832','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:GET
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Connection = keep-alive
+	* Upgrade-Insecure-Requests = 1
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+	* Accept-Encoding = gzip, deflate
+	* Accept-Language = en-US,en;q=0.9,fr;q=0.8,de;q=0.7
+	* Cookie = jraulouvre=30393afb-2ffb-4bc8-9824-5f2939880579
+* Form:
+* Files:
+}
+{'2019-03-11 16:44:46.314','INFO',53569,register.py:124-register:-->Remaining Shifts: 8}
+{'2019-03-11 16:44:46.314','INFO',53569,register.py:134-register:-->time = 0:00:00.481904}
+{'2019-03-11 16:45:12.192','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:POST
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* Accept-Language = en-us
+	* Accept-Encoding = gzip, deflate
+	* Content-Type = application/x-www-form-urlencoded
+	* Origin = http://0.0.0.0:5000
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/register.html?language=en
+	* Upgrade-Insecure-Requests = 1
+	* Dnt = 1
+	* Content-Length = 183
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+* Form:
+	* Shift = 1
+	* Email = herve.mischler@gmail.com
+	* EmailConfirmation = herve.mischler@gmail.com
+	* Firstname = Mischler
+	* Lastname = herve
+	* Birthdate = 05/04/1975
+	* checkbox1 = on
+	* checkbox2 = on
+	* checkbox3 = on
+* Files:
+}
+{'2019-03-11 16:45:12.435','INFO',53569,register.py:60-register:-->Shift Id 1 still Available - 0/10}
+{'2019-03-11 16:47:39.506','DEBUG',53569,register.py:26-register:-->* url: http://0.0.0.0:5000/register.html?language=en
+* method:POST
+* Args:
+	* language = en
+* Headers:
+	* Host = 0.0.0.0:5000
+	* Accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+	* Accept-Language = en-us
+	* Accept-Encoding = gzip, deflate
+	* Content-Type = application/x-www-form-urlencoded
+	* Origin = http://0.0.0.0:5000
+	* User-Agent = Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+	* Referer = http://0.0.0.0:5000/register.html?language=en
+	* Upgrade-Insecure-Requests = 1
+	* Dnt = 1
+	* Content-Length = 183
+	* Cookie = jraulouvre=f7d077d1-6961-4860-9828-3737e50ea653
+	* Connection = keep-alive
+* Form:
+	* Shift = 1
+	* Email = herve.mischler@gmail.com
+	* EmailConfirmation = herve.mischler@gmail.com
+	* Firstname = Mischler
+	* Lastname = herve
+	* Birthdate = 05/05/1975
+	* checkbox1 = on
+	* checkbox2 = on
+	* checkbox3 = on
+* Files:
+}
+{'2019-03-11 16:47:39.790','INFO',53569,register.py:60-register:-->Shift Id 1 still Available - 0/10}
+{'2019-03-11 16:50:26.808','INFO',54410,postgres.py:28-<module>:-->2019-03-11 16:50:26.808293 - Initialization done Postgresql }
+{'2019-03-11 16:50:27.163','INFO',54411,postgres.py:28-<module>:-->2019-03-11 16:50:27.163076 - Initialization done Postgresql }
