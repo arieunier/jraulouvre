@@ -13,9 +13,11 @@
     }
   },
   "addons": [
-    {"plan": "heroku-postgresql:standard-0"},
-    {"plan": "heroku-redis:premium-0"},
+    {"plan": "heroku-postgresql:hobby"},
+    {"plan": "heroku-redis:hobby"},
+    {"plan": "herokuconnect:demo"},
     {"plan": "logdna:atto"},
+    {"plan": "loader:basic"},
     {"plan": "newrelic:drake"},
     {"plan": "sendgrid:silver"}
   ],
