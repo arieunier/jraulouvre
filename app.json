@@ -19,7 +19,7 @@
     {"plan": "logdna:atto"},
     {"plan": "loaderio:basic"},
     {"plan": "newrelic:hawke"},
-    {"plan": "sendgrid:silver"}
+    {"plan": "sendgrid:starter"}
   ],
   "buildpacks": [
     {
