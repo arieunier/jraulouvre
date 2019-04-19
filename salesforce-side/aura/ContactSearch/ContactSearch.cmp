@@ -1,0 +1,47 @@
+<aura:component controller="ContactSearch2" access="global" implements="flexipage:availableForAllPageTypes">
+ <aura:attribute name="contacts" type="public_voluntary__x[]"/>
+ <aura:handler name="init" value="{!this}" action="{!c.init}" />
+<lightning:card title="Enregistrement Volontaires JR">
+ <div class="search-field">
+ <lightning:input aura:id="nameFilter" label="Recherche Code" onchange="{!c.handleNameFilterChange}" />
+ </div>
+ <div class="results">
+ <aura:if isTrue="{!v.contacts.length > 0}">
+ <p class="has-results">
+{!v.contacts.length} volontaire(s) affichés:
+ </p>
+     <lightning:card variant="Narrow" title="Contacts">
+        <!-- Body of lightning card starts here -->
+        <p class="slds-p-horizontal_small">
+            <!-- Aura iteration to iterate list, similar to apex:repeat -->
+            <aura:iteration items="{!v.contacts}" var="contact">
+                <!-- recordViewForm to view the record -->
+                <lightning:recordViewForm recordId="{!contact.Id}" objectApiName="Contact">
+                    <div class="slds-box slds-theme_default">
+                        <lightning:button label="{!contact.registrationstatus__c == 'COMPLETED' ? 'Désenregistrement' : 'Enregistrement'}" aura:id="{!contact.id__c+'1'}" value="{!contact.id__c}"
+                          onclick="{!c.selectChange}" 
+                          disabled="false"/>
+                        <br />
+                        <lightning:outputField fieldName="registrationstatus__c" />
+                        <lightning:outputField fieldName="firstname__c" />
+                        <lightning:outputField fieldName="lastname__c" />
+                        <lightning:outputField fieldName="email" />
+                        <lightning:outputField fieldName="confirmationcode__c" />
+                        <lightning:outputField fieldName="shiftid__c" />
+                    </div>
+                    
+
+                </lightning:recordViewForm>
+                <!-- Line break between two records -->
+                <br />
+            </aura:iteration>
+        </p>
+        <!-- Lightning card actions -->
+    </lightning:card>
+ <aura:set attribute="else">
+ <p class="no-results">Aucun Résultat.</p>
+ </aura:set>
+ </aura:if>
+ </div>
+ </lightning:card>
+</aura:component>

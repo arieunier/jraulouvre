@@ -1,5 +1,4 @@
- 
- use public;
+use public;
 drop table if exists public.voluntary;
 commit;
 drop table if exists public.shift;
