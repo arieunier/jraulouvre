@@ -37,21 +37,6 @@
         "Description" : "Log level for applications",
         "value" : "DEBUG",
         "required" : true
-      },
-      "KAFKA_CONSUMERGRP": {
-        "Description" : "Kafka default consumer group",
-        "value" : "my-consumer-group",
-        "required" : true
-      },
-      "KAFKA_TOPIC_READ": {
-        "Description" : "Kafka incoming default topic",
-        "value" : "topicRead",
-        "required" : true
-      },
-      "KAFKA_TOPIC_WRITE": {
-        "Description" : "Kafka outgoing default topic",
-        "value" : "topicWrite",
-        "required" : true
       }
   },
   "environments": {
