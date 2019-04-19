@@ -22,7 +22,7 @@ def print_html_doc():
 
 
 def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, Telephone, Language):
-    sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
+    sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
     
     bcc = "contact@jraulouvre.net"
     #content = Content("text/plain", "Hello, Email!")
