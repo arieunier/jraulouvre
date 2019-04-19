@@ -15,8 +15,7 @@ create table public.voluntary(
                 ConfirmationCode varchar(6) not null,
                 CookieId varchar(36) not null,
                 creation_date timestamp not null default NOW(),
-                preferred_language varchar(2) not null default 'fr',
-                SignedUp 
+                preferred_language varchar(2) not null default 'fr', 
 ); 
 commit;
 create table public.shift(

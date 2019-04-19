@@ -26,7 +26,7 @@ echo "######### Adding Redis addon"
 heroku addons:create heroku-redis:premium-0 --app $APPLICATION_NAME
 
 echo "######### Adding LogDNA"
-heroku addons:create lgodna:atto --app $APPLICATION_NAME
+heroku addons:create logdna:atto --app $APPLICATION_NAME
 
 echo "######### Adding sendgrid"
 heroku addons:create sendgrid:starter --app $APPLICATION_NAME
@@ -40,8 +40,8 @@ heroku config:add NEW_RELIC_LOG_LEVEL=debug --app $APPLICATION_NAME
 heroku config:set NEW_RELIC_APP_NAME="$APPLICATION_NAME" --app $APPLICATION_NAME
 
 
-echo "######### Creates databases "
-heroku pg:psql -f createTables.sql
+echo "######### Creates databases " 
+heroku pg:psql -f createTables.sql --app $APPLICATION_NAME
 
 echo "######### adding other environment variables"
 heroku config:set LOG_LEVEL='DEBUG'
@@ -49,6 +49,7 @@ heroku config:set APPNAME=$APPLICATION_NAME
 
 
 echo "######### Pushing sources"
+
 git push heroku master
 
 
