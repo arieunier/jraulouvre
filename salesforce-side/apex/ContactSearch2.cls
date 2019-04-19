@@ -1,3 +1,4 @@
+
 public class ContactSearch2 {
 
     @AuraEnabled
