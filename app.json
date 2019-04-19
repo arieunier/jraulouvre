@@ -18,7 +18,7 @@
     {"plan": "herokuconnect:demo"},
     {"plan": "logdna:atto"},
     {"plan": "loaderio:basic"},
-    {"plan": "newrelic:drake"},
+    {"plan": "newrelic:Hawke"},
     {"plan": "sendgrid:silver"}
   ],
   "buildpacks": [
