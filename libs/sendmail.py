@@ -7,6 +7,7 @@ from datetime import datetime
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 SENDGRID_API_KEY=os.environ.get('SENDGRID_API_KEY', '')
+APPNAME=os.environ.get('APPNAME', '')
 FROM_EMAIL = Email("contact@jraulouvre.net", "JR Au Louvre")
 SUBJECT = {'fr' :  "JR Au Louvre - Confirmation d'inscription", 
 'en' : "JR Au Louvre : Registration confirmation"}
@@ -36,6 +37,7 @@ def sendEmail(emailTo, Firstname, Lastname, Birthdate, Confirmation, Id, Shift, 
                         Id=Id ,  
                         Telephone=Telephone,
                         language=Language, 
+                        appname=APPNAME,
                         Date =  datetime.now().strftime("%d-%m-%Y"))
     
 

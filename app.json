@@ -37,6 +37,11 @@
         "Description" : "Log level for applications",
         "value" : "DEBUG",
         "required" : true
+      },
+      "APPNAME": {
+        "Description" : "Name of the application",
+        "value" : "jraulouvredemo",
+        "required" : true
       }
   },
   "environments": {
