@@ -29,7 +29,10 @@ echo "######### Adding LogDNA"
 heroku addons:create logdna:atto --app $APPLICATION_NAME
 
 echo "######### Adding sendgrid"
-heroku addons:create sendgrid:starter --app $APPLICATION_NAME
+#heroku addons:create sendgrid:starter --app $APPLICATION_NAME
+heroku config:set SENDGRID_API_KEY=`heroku config:get SENDGRID_API_KEY --app jraulouvre` --app $APPLICATION_NAME
+heroku config:set SENDGRID_PASSWORD=`heroku config:get SENDGRID_PASSWORD --app jraulouvre` --app $APPLICATION_NAME
+heroku config:set SENDGRID_USERNAME=`heroku config:get SENDGRID_USERNAME --app jraulouvre` --app $APPLICATION_NAME
 
 echo "######### Adding New relic"
 heroku addons:create newrelic:hawke --app $APPLICATION_NAME
@@ -44,8 +47,9 @@ echo "######### Creates databases "
 heroku pg:psql -f createTables.sql --app $APPLICATION_NAME
 
 echo "######### adding other environment variables"
-heroku config:set LOG_LEVEL='DEBUG'
-heroku config:set APPNAME=$APPLICATION_NAME
+
+heroku config:set LOG_LEVEL='DEBUG' --app $APPLICATION_NAME
+heroku config:set APPNAME=$APPLICATION_NAME --app $APPLICATION_NAME
 
 
 echo "######### Pushing sources"
