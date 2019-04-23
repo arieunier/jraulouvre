@@ -3,6 +3,20 @@ drop table if exists public.voluntary;
 commit;
 drop table if exists public.shift;
 commit;
+create table public.voluntary(	
+                Id varchar(36) not null primary key, 	
+                Firstname varchar(255) not null,	
+                Lastname varchar(255) not null,	
+                Birthdate date not null,	
+                Email varchar(100) not null,	
+                Telephone varchar(20) not null,	
+                ShiftId varchar(36) references public.shift(Id),	
+                RegistrationStatus varchar(30) not null,	
+                ConfirmationCode varchar(6) not null,	
+                CookieId varchar(36) not null,	
+                creation_date timestamp not null default NOW(),	
+                preferred_language varchar(2) not null default 'fr'	
+); 
 commit;
 create table public.shift(
                 Id varchar(5) not null primary key,
