@@ -3,6 +3,15 @@ drop table if exists public.voluntary;
 commit;
 drop table if exists public.shift;
 commit;
+create table public.shift(
+                Id varchar(5) not null primary key,
+                ShiftDate date not null,
+                ShiftNameFr varchar(36) not null,
+                ShiftNameEn varchar(36) not null,
+                ShiftTime varchar(16) not null, 
+                ShiftTotalSeats integer,
+                ShiftCurrentConfirmed integer
+);
 create table public.voluntary(	
                 Id varchar(36) not null primary key, 	
                 Firstname varchar(255) not null,	
@@ -18,15 +27,7 @@ create table public.voluntary(
                 preferred_language varchar(2) not null default 'fr'	
 ); 
 commit;
-create table public.shift(
-                Id varchar(5) not null primary key,
-                ShiftDate date not null,
-                ShiftNameFr varchar(36) not null,
-                ShiftNameEn varchar(36) not null,
-                ShiftTime varchar(16) not null, 
-                ShiftTotalSeats integer,
-                ShiftCurrentConfirmed integer
-);
+
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
         values ('1', '2019-03-26', 'Mardi 26 Mars - 10h-12h30', 'Tuesday March 26th - 10h-12h30', '10h - 12h30', 10, 0);
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
