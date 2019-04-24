@@ -11,12 +11,11 @@ fi
 
 APPLICATION_NAME=$1
 
-echo "######### Creating the app"
-heroku apps:create $APPLICATION_NAME --region eu 
+#echo "######### Creating the app"
+#heroku apps:create $APPLICATION_NAME --region eu 
 
-
-echo "######### Adding Heroku Postgres addon"
-heroku addons:create heroku-postgresql --app $APPLICATION_NAME
+#echo "######### Adding Heroku Postgres addon"
+#heroku addons:create heroku-postgresql --app $APPLICATION_NAME
 
 
 echo "######### Adding Heroku Connect addon"
