@@ -18,13 +18,13 @@ create table public.voluntary(
                 Lastname varchar(255) not null,	
                 Birthdate date not null,	
                 Email varchar(100) not null,	
-                Telephone varchar(20) not null,	
+                Telephone varchar(20) not null,	 
                 ShiftId varchar(36) references public.shift(Id),	
-                RegistrationStatus varchar(30) not null,	
+                RegistrationStatus varchar(30) not null, 	
                 ConfirmationCode varchar(6) not null,	
                 CookieId varchar(36) not null,	
-                creation_date timestamp not null default NOW(),	
-                preferred_language varchar(2) not null default 'fr'	
+                creation_date timestamp not null default NOW(),	 
+                preferred_language varchar(2) not null default 'fr'
 ); 
 commit;
 
@@ -47,6 +47,7 @@ insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, Shi
         values ('7', '2019-03-27', 'Vendredi 29 Mars - 09h-12h30', 'Friday March 29 - 09h-12h30', '09h00 - 12h30', 45, 0);
 insert into public.Shift(Id, ShiftDate, ShiftNameFr, ShiftNameEn, ShiftTime, ShiftTotalSeats, ShiftCurrentConfirmed) 
         values ('8', '2019-03-27', 'Vendredi 29 Mars - 14h30-18h', 'Friday March 29 - 14h30-18h', '14h30 - 18h00', 45, 0);        
-commit;                
+commit;
 
 
+/* insert into salesforce.shift__c(Name, ShiftDate__c, ShiftNameFr__c, ShiftNameEn__c, ShiftTime__c, ShiftTotalSeats__c, ShiftCurrentConfirmed__c, ExternalId__c) values ('1', '2019-03-26', 'Mardi 26 Mars - 10h-12h30', 'Tuesday March 26th - 10h-12h30', '10h - 12h30', 10, 0, '1'); */
