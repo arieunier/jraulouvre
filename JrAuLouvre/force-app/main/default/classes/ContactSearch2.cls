@@ -10,14 +10,6 @@ public class ContactSearch2 {
         }
     }
     
-	@future(callout=True)
-    public static void asyncCallout(String uid, String value)
-    {
-        public_externalobjectdemo__x obj = new public_externalobjectdemo__x(id__c = uid, val__c=value);
-        System.debug(obj.id__c);
-        System.debug(obj.val__c);
-        Database.SaveResult srList2 = Database.insertAsync(obj);
-    }
     
     @AuraEnabled
     public static void checkinContacts(string contactId){

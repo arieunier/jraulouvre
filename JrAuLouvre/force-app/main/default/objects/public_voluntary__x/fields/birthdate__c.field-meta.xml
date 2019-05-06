@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>birthdate__c</fullName>
+    <description>birthdate</description>
+    <externalDeveloperName>birthdate</externalDeveloperName>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>birthdate</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

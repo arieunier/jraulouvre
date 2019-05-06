@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalDataSource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customConfiguration>{&quot;inlineCountEnabled&quot;:&quot;true&quot;,&quot;csrfTokenName&quot;:&quot;&quot;,&quot;requestCompression&quot;:&quot;false&quot;,&quot;pagination&quot;:&quot;CLIENT&quot;,&quot;Change-Tracking Interval&quot;:&quot;300&quot;,&quot;noIdMapping&quot;:&quot;false&quot;,&quot;format&quot;:&quot;JSON&quot;,&quot;csrfTokenEnabled&quot;:&quot;false&quot;,&quot;compatibility&quot;:&quot;DEFAULT&quot;,&quot;timeout&quot;:&quot;120&quot;,&quot;searchEnabled&quot;:&quot;true&quot;,&quot;ChangeTrackingEnabled&quot;:&quot;true&quot;}</customConfiguration>
+    <endpoint>https://odata-eu.heroku.com/odata/v4/f4ea6492447c4173bb7486e235b2afb8/</endpoint>
+    <isWritable>true</isWritable>
+    <label>herokudb</label>
+    <principalType>NamedUser</principalType>
+    <protocol>Password</protocol>
+    <type>OData4</type>
+    <username>86aee43002b5459ab24eac363e610417</username>
+    <password>thisisapassword</password>
+</ExternalDataSource>
