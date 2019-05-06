@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>X38003_xl</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>JR Au Louvre</label>
+    <navType>Standard</navType>
+    <tabs>Voluntary_Checks</tabs>
+    <tabs>public_shift__x</tabs>
+    <tabs>public_voluntary__x</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>JR_Au_Louvre_UtilityBar</utilityBar>
+</CustomApplication>

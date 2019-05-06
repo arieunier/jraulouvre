@@ -33,7 +33,7 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>InDevelopment</deploymentStatus>
+    <deploymentStatus>Deployed</deploymentStatus>
     <description>public$voluntary</description>
     <enableFeeds>false</enableFeeds>
     <enableLicensing>false</enableLicensing>
