@@ -120,6 +120,10 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>Voluntary_Checks</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>public_shift__x</tab>
         <visibility>Visible</visibility>
     </tabSettings>

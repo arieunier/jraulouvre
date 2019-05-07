@@ -4,6 +4,7 @@
 
 package.xml
 AppSwitcher.appMenu
+OrgPreference.settings-meta.xml
 
 # LWC configuration files
 **/jsconfig.json
