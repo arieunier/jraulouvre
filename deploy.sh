@@ -17,7 +17,6 @@ heroku apps:create $APPLICATION_NAME --region eu
 echo "######### Adding Heroku Postgres addon"git
 heroku addons:create heroku-postgresql --app $APPLICATION_NAME
 
-
 echo "######### Adding Heroku Connect addon"
 heroku addons:create herokuconnect --app $APPLICATION_NAME
 
@@ -27,11 +26,15 @@ heroku addons:create heroku-redis:premium-0 --app $APPLICATION_NAME
 echo "######### Adding LogDNA"
 heroku addons:create logdna:atto --app $APPLICATION_NAME
 
+
+echo "######### Adding Loaderio"
+heroku addons:create loaderio:basic --app $APPLICATION_NAME
+
 echo "######### Adding sendgrid"
-#heroku addons:create sendgrid:starter --app $APPLICATION_NAME
-heroku config:set SENDGRID_API_KEY=`heroku config:get SENDGRID_API_KEY --app jraulouvre` --app $APPLICATION_NAME
-heroku config:set SENDGRID_PASSWORD=`heroku config:get SENDGRID_PASSWORD --app jraulouvre` --app $APPLICATION_NAME
-heroku config:set SENDGRID_USERNAME=`heroku config:get SENDGRID_USERNAME --app jraulouvre` --app $APPLICATION_NAME
+heroku addons:create sendgrid:starter --app $APPLICATION_NAME
+#heroku config:set SENDGRID_API_KEY=`heroku config:get SENDGRID_API_KEY --app jraulouvre` --app $APPLICATION_NAME
+#heroku config:set SENDGRID_PASSWORD=`heroku config:get SENDGRID_PASSWORD --app jraulouvre` --app $APPLICATION_NAME
+#heroku config:set SENDGRID_USERNAME=`heroku config:get SENDGRID_USERNAME --app jraulouvre` --app $APPLICATION_NAME
 
 echo "######### Adding New relic"
 heroku addons:create newrelic:hawke --app $APPLICATION_NAME
