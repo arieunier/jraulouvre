@@ -14,7 +14,7 @@ APPLICATION_NAME=$1
 echo "######### Creating the app"
 heroku apps:create $APPLICATION_NAME --region eu 
 
-echo "######### Adding Heroku Postgres addon"
+echo "######### Adding Heroku Postgres addon"git
 heroku addons:create heroku-postgresql --app $APPLICATION_NAME
 
 

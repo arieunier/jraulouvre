@@ -15,7 +15,7 @@
   "addons": [
     {"plan": "heroku-postgresql:hobby-dev"},
     {"plan": "heroku-redis:hobby-dev"},
-    {"plan": "herokuconnect:demo"},
+    
     {"plan": "logdna:atto"},
     {"plan": "loaderio:basic"},
     {"plan": "newrelic:hawke"},
