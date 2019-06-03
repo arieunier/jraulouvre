@@ -14,18 +14,20 @@ APPLICATION_NAME=$1
 echo "######### Creating the app"
 heroku apps:create $APPLICATION_NAME --region eu 
 
+echo "######### Adding Timber"
+heroku addons:create timber-logging:free --app $APPLICATION_NAME
+
 echo "######### Adding Heroku Postgres addon"git
 heroku addons:create heroku-postgresql --app $APPLICATION_NAME
+
+echo "######### Creates databases " 
+heroku pg:psql -f createTables.sql --app $APPLICATION_NAME
 
 echo "######### Adding Heroku Connect addon"
 heroku addons:create herokuconnect --app $APPLICATION_NAME
 
 echo "######### Adding Redis addon"
 heroku addons:create heroku-redis:premium-0 --app $APPLICATION_NAME
-
-echo "######### Adding LogDNA"
-heroku addons:create logdna:atto --app $APPLICATION_NAME
-
 
 echo "######### Adding Loaderio"
 heroku addons:create loaderio:basic --app $APPLICATION_NAME
@@ -43,10 +45,6 @@ newrelic-admin generate-config $NEW_RELIC_LICENSE_KEY newrelic.ini
 heroku config:add NEW_RELIC_CONFIG_FILE='/app/newrelic.ini'  --app $APPLICATION_NAME
 heroku config:add NEW_RELIC_LOG_LEVEL=debug --app $APPLICATION_NAME
 heroku config:set NEW_RELIC_APP_NAME="$APPLICATION_NAME" --app $APPLICATION_NAME
-
-
-echo "######### Creates databases " 
-heroku pg:psql -f createTables.sql --app $APPLICATION_NAME
 
 echo "######### adding other environment variables"
 
