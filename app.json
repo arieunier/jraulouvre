@@ -9,13 +9,12 @@
   "formation": {
     "web": {
       "quantity": 2,
-      "size": "Sandard-1X"
+      "size": "Standard-1X"
     }
   },
   "addons": [
     {"plan": "heroku-postgresql:hobby-dev"},
     {"plan": "heroku-redis:hobby-dev"},
-    
     {"plan": "logdna:atto"},
     {"plan": "loaderio:basic"},
     {"plan": "newrelic:hawke"},
