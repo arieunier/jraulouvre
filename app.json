@@ -15,7 +15,11 @@
   "addons": [
     {"plan": "heroku-postgresql:hobby-dev"},
     {"plan": "heroku-redis:hobby-dev"},
+<<<<<<< HEAD
     {"plan": "coralogix:dev"},
+=======
+    {"plan": "logdna:atto"},
+>>>>>>> b81077f4921b783678d28f5e484a18bdde540344
     {"plan": "loaderio:basic"},
     {"plan": "newrelic:hawke"},
     {"plan": "sendgrid:starter"}
