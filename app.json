@@ -8,15 +8,14 @@
   },
   "formation": {
     "web": {
-      "quantity": 1,
-      "size": "standard-1x"
+      "quantity": 2,
+      "size": "Standard-1X"
     }
   },
   "addons": [
     {"plan": "heroku-postgresql:hobby-dev"},
     {"plan": "heroku-redis:hobby-dev"},
-    
-    {"plan": "logdna:atto"},
+    {"plan": "coralogix:dev"},
     {"plan": "loaderio:basic"},
     {"plan": "newrelic:hawke"},
     {"plan": "sendgrid:starter"}

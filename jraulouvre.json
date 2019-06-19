@@ -1,0 +1,17 @@
+{
+  "mappings": [],
+  "connection": {
+    "app_name": "jraulouvre",
+    "organization_id": null,
+    "exported_at": "2019-06-19T14:16:55.403569+00:00",
+    "features": {
+      "poll_db_no_merge": true,
+      "poll_external_ids": false,
+      "rest_count_only": false
+    },
+    "api_version": "45.0",
+    "name": "",
+    "logplex_log_enabled": false
+  },
+  "version": 1
+}
