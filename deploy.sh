@@ -14,13 +14,8 @@ APPLICATION_NAME=$1
 echo "######### Creating the app"
 heroku apps:create $APPLICATION_NAME --region eu 
 
-<<<<<<< HEAD
 echo "######### Adding Coralogix"
 heroku addons:create coralogix:dev --app $APPLICATION_NAME
-=======
-echo "######### Adding Timber"
-heroku addons:create timber-logging:free --app $APPLICATION_NAME
->>>>>>> b81077f4921b783678d28f5e484a18bdde540344
 
 echo "######### Adding Heroku Postgres addon"git
 heroku addons:create heroku-postgresql --app $APPLICATION_NAME
