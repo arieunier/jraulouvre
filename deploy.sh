@@ -29,11 +29,14 @@ export HEROKU_API_KEY
 heroku addons:create herokuconnect --app $APPLICATION_NAME
 
 echo "######### Configuring Heroku Connect Addon"
-#echo "Enter org name:"
-#read -s orgname
-#echo "Enter Org Password:"
-#read -s password
-#sfdx shane:heroku:connect -a $APPLICATION_NAME -e production -f jraulouvre.json -u $orgname -p $password > /dev/null
+echo "Enter Heroku Connect technical User Login:"
+read -s orgname
+echo $orgname
+echo "Enter Heroku Connect Technical User Password:"
+read -s password
+echo $password
+
+sfdx shane:heroku:connect -a $APPLICATION_NAME -e production -f jraulouvre.json -u $orgname -p $password > /dev/null
 
 echo "######### Adding Redis addon"
 heroku addons:create heroku-redis:premium-0 --app $APPLICATION_NAME
@@ -43,6 +46,7 @@ heroku addons:create loaderio:basic --app $APPLICATION_NAME
 
 echo "######### Adding sendgrid"
 #heroku addons:create sendgrid:starter --app $APPLICATION_NAME
+#heroku config:set SENDGRID_API_KEY=`FILLME` --app $APPLICATION_NAME
 heroku config:set SENDGRID_API_KEY=`heroku config:get SENDGRID_API_KEY --app jraulouvre` --app $APPLICATION_NAME
 heroku config:set SENDGRID_PASSWORD=`heroku config:get SENDGRID_PASSWORD --app jraulouvre` --app $APPLICATION_NAME
 heroku config:set SENDGRID_USERNAME=`heroku config:get SENDGRID_USERNAME --app jraulouvre` --app $APPLICATION_NAME

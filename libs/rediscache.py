@@ -46,6 +46,9 @@ def __setCache(key, data, ttl):
             __connect()
 
         key_str = ujson.dumps(key)
+        logger.info('Key->{}'.format(key_str))
+        logger.info('Data->{}'.format(data))
+
         if (REDIS_CONN != None):
             #logger.debug('Storing in Redis')
             REDIS_CONN.set(key_str, data)

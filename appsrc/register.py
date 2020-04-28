@@ -116,7 +116,7 @@ def register():
             if (shiftsAvailBinary == '' or shiftsAvailBinary == None):
                 # gets the current Shift and saves them in redis for others
                 shiftAvail = postgres.getShifts()
-                rediscache.__setCache(variables.KEY_REDIS_SHIFTS, ujson.dumps(shiftAvail), 60)
+                rediscache.__setCache(variables.KEY_REDIS_SHIFTS, utils.jsonencode(shiftAvail), 60)
             else:
                 shiftAvail = ujson.loads(shiftsAvailBinary)
 

@@ -1,10 +1,20 @@
-import datetime
+from datetime import datetime
 import uuid
 from flask import request
 import os 
 import traceback
+import json
 
 APPNAME = os.getenv("APPNAME", "jraulouvre")
+
+def myconverter(o):
+    if isinstance(o, datetime):
+        return o.__str__()
+
+
+def jsonencode(data):
+    return json.dumps(data, default = myconverter)
+
 
 def getBrowserLanguage(request):
     supported_languages = ["en", "fr", "fr-fr"]
